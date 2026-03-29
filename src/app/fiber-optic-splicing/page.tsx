@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import ListingSearchWidget from '@/components/search/ListingSearchWidget'
 import SchemaScript from '@/components/seo/SchemaScript'
 import RecommendedTools from '@/components/tools/RecommendedTools'
@@ -59,6 +60,22 @@ export default function FiberOpticSplicingPage() {
 
         {/* Content */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-14">
+
+          {/* Photo gallery */}
+          <section>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { src: '/images/fiber/IMG_0989.jpg', alt: 'Fiber splice tray' },
+                { src: '/images/fiber/IMG_1252.jpg', alt: 'Fusion splicing in the field' },
+                { src: '/images/fiber/IMG_3450.jpg', alt: 'Fiber optic cable work' },
+                { src: '/images/fiber/IMG_5010.jpg', alt: 'Splice closure installation' },
+              ].map((photo) => (
+                <div key={photo.src} className="rounded-lg overflow-hidden aspect-square">
+                  <Image src={photo.src} alt={photo.alt} width={240} height={240} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* What is fiber optic splicing */}
           <section>

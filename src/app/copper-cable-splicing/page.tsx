@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import ListingSearchWidget from '@/components/search/ListingSearchWidget'
 import SchemaScript from '@/components/seo/SchemaScript'
 
@@ -60,6 +61,22 @@ export default function CopperCableSplicingPage() {
 
         {/* Content */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-14">
+
+          {/* Photo gallery */}
+          <section>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { src: '/images/copper/IMG_0024.jpg', alt: 'Copper cable splice work' },
+                { src: '/images/copper/IMG_0673.jpg', alt: 'Multi-pair copper splicing' },
+                { src: '/images/copper/IMG_0818.jpg', alt: 'Underground copper repair' },
+                { src: '/images/copper/IMG_0820.jpg', alt: 'Pedestal cable work' },
+              ].map((photo) => (
+                <div key={photo.src} className="rounded-lg overflow-hidden aspect-square">
+                  <Image src={photo.src} alt={photo.alt} width={240} height={240} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* What is copper cable splicing */}
           <section>

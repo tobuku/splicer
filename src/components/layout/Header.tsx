@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import gsap from 'gsap'
 
@@ -48,11 +49,16 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo — text only, no SVG */}
+        {/* Logo */}
         <Link href="/" className="flex items-center group">
-          <span className="text-xl font-bold tracking-widest text-white uppercase select-none">
-            SPLICE<span className="text-[#0ea5e9]">LIST</span>
-          </span>
+          <Image
+            src="/images/splicelist_logo.jpg"
+            alt="SpliceList"
+            width={140}
+            height={40}
+            className="h-9 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

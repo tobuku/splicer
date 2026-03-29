@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import gsap from 'gsap'
 
@@ -120,7 +121,8 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <div className="max-w-4xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-2xl">
           {/* Badge */}
           <div className="hero-badge inline-flex items-center gap-2 bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 text-[#0ea5e9] px-4 py-2 rounded-full text-sm font-medium mb-7">
             <span className="relative flex h-2 w-2">
@@ -225,6 +227,21 @@ export default function HeroSection() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Right side — photo collage (desktop only) */}
+        <div className="hero-photos hidden lg:grid grid-cols-2 gap-3">
+          <div className="col-span-2 rounded-lg overflow-hidden aspect-video">
+            <Image src="/images/fiber/IMG_1826.jpg" alt="Fiber splice crew at work" width={560} height={315} className="w-full h-full object-cover" priority />
+          </div>
+          <div className="rounded-lg overflow-hidden" style={{ aspectRatio: '4/3' }}>
+            <Image src="/images/copper/IMG_0818.jpg" alt="Copper cable splice" width={280} height={210} className="w-full h-full object-cover" />
+          </div>
+          <div className="rounded-lg overflow-hidden" style={{ aspectRatio: '4/3' }}>
+            <Image src="/images/equipment/IMG_5898.jpg" alt="Fusion splicer equipment" width={280} height={210} className="w-full h-full object-cover" />
+          </div>
+        </div>
+
         </div>
       </div>
     </div>

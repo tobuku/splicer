@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -66,35 +67,20 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Right side image placeholder */}
+          {/* Right side — field photo grid */}
           <div className="relative hidden lg:block">
-            <div className="aspect-square max-w-md mx-auto rounded-2xl bg-[#0f172a] border border-slate-700/50 overflow-hidden flex items-center justify-center">
-              <div className="text-center p-8">
-                <svg
-                  viewBox="0 0 200 200"
-                  className="w-48 h-48 mx-auto mb-4 opacity-40"
-                  fill="none"
-                  stroke="#0ea5e9"
-                  strokeWidth="1"
-                >
-                  <circle cx="100" cy="100" r="90" strokeDasharray="4 4" />
-                  <circle cx="100" cy="100" r="60" strokeDasharray="4 4" />
-                  <circle cx="100" cy="100" r="30" />
-                  <line x1="10" y1="100" x2="190" y2="100" />
-                  <line x1="100" y1="10" x2="100" y2="190" />
-                  <circle cx="100" cy="100" r="5" fill="#0ea5e9" />
-                  <circle cx="160" cy="100" r="4" fill="#0ea5e9" opacity="0.6" />
-                  <circle cx="40" cy="100" r="4" fill="#0ea5e9" opacity="0.6" />
-                  <circle cx="100" cy="40" r="4" fill="#0ea5e9" opacity="0.6" />
-                </svg>
-                <p className="text-slate-500 text-sm">
-                  Place your field photos in
-                  <br />
-                  <code className="text-slate-400">public/images/</code>
-                </p>
+            <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
+              <div className="col-span-2 rounded-lg overflow-hidden aspect-video">
+                <Image src="/images/fiber/IMG_0989.jpg" alt="Fiber optic splice technician" width={480} height={270} className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-lg overflow-hidden aspect-square">
+                <Image src="/images/copper/IMG_0024.jpg" alt="Copper cable splicing" width={240} height={240} className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-lg overflow-hidden aspect-square">
+                <Image src="/images/equipment/IMG_1046.jpg" alt="Splice equipment" width={240} height={240} className="w-full h-full object-cover" />
               </div>
             </div>
-            <div className="absolute inset-0 rounded-2xl bg-[var(--blue)]/5 blur-xl -z-10" />
+            <div className="absolute inset-0 rounded-2xl bg-[#0ea5e9]/5 blur-xl -z-10" />
           </div>
         </div>
       </div>
