@@ -18,6 +18,7 @@ export interface Tool {
   affiliate: string
   featured?: boolean
   badge?: string
+  image?: string
 }
 
 export const TOOL_CATEGORIES = [
@@ -42,6 +43,7 @@ export const TOOLS: Tool[] = [
     affiliate: amazonSearch('Fujikura FSM-90S fusion splicer'),
     featured: true,
     badge: 'Industry Standard',
+    image: '/images/tools/IMG_80024.jpg',
   },
   {
     id: 'sumitomo-z1c',
@@ -84,6 +86,7 @@ export const TOOLS: Tool[] = [
     affiliate: amazonSearch('Fujikura CT-30A fiber cleaver'),
     featured: true,
     badge: 'Top Rated',
+    image: '/images/tools/IMG_3690.jpg',
   },
   {
     id: 'sumitomo-fc-6s',
@@ -143,6 +146,7 @@ export const TOOLS: Tool[] = [
     category: 'otdr',
     priceRange: '$',
     affiliate: amazonSearch('AFL optical power meter fiber'),
+    image: '/images/tools/IMG_1425.jpg',
   },
 
   // ── Fiber Prep Tools ─────────────────────────────────────────────────────
@@ -164,6 +168,7 @@ export const TOOLS: Tool[] = [
     priceRange: '$',
     affiliate: amazonSearch('Clauss No-Nik fiber optic stripper'),
     badge: 'Essential',
+    image: '/images/tools/IMG_9917.JPG',
   },
   {
     id: 'fiber-cleaning-kit',
@@ -182,6 +187,7 @@ export const TOOLS: Tool[] = [
     category: 'fiber-prep',
     priceRange: '$',
     affiliate: amazonSearch('fiber optic inspection scope 400x'),
+    image: '/images/tools/IMG_3310.jpg',
   },
 
   // ── Copper Splicing ──────────────────────────────────────────────────────
@@ -195,6 +201,7 @@ export const TOOLS: Tool[] = [
     affiliate: amazonSearch('3M UR2 splice connectors telephone'),
     featured: true,
     badge: 'Industry Standard',
+    image: '/images/tools/IMG_0831.jpg',
   },
   {
     id: '3m-sco-splice',
@@ -214,6 +221,7 @@ export const TOOLS: Tool[] = [
     priceRange: '$',
     affiliate: amazonSearch('Tempo 77HP tone probe kit'),
     badge: 'Essential',
+    image: '/images/tools/IMG_0748.jpg',
   },
   {
     id: 'klein-wire-stripper',
@@ -303,6 +311,7 @@ export const TOOLS: Tool[] = [
     category: 'safety',
     priceRange: '$',
     affiliate: amazonSearch('Black Diamond headlamp 1000 lumen rechargeable'),
+    image: '/images/tools/IMG_0325.JPG',
   },
   {
     id: 'knee-pads',

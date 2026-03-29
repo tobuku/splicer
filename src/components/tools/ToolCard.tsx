@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Tool } from '@/lib/tools'
 
 const priceLabels: Record<string, string> = {
@@ -31,6 +32,20 @@ export default function ToolCard({ tool }: Props) {
         ? 'border-[#0ea5e9]/30 hover:border-[#0ea5e9]/60 hover:shadow-[#0ea5e9]/10'
         : 'border-slate-800 hover:border-slate-600'
     }`}>
+      {/* Photo */}
+      {tool.image && (
+        <div className="relative w-full h-36 -mx-5 -mt-5 mb-4 rounded-t-2xl overflow-hidden">
+          <Image
+            src={tool.image}
+            alt={tool.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0f172a]/60" />
+        </div>
+      )}
+
       {/* Badge */}
       {tool.badge && (
         <span className={`absolute top-4 right-4 text-xs font-semibold px-2 py-1 rounded-full border ${badgeColors[tool.badge] || 'bg-slate-500/10 text-slate-400 border-slate-500/30'}`}>
