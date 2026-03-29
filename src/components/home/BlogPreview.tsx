@@ -41,13 +41,21 @@ export default function BlogPreview() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.from('.blog-heading', {
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: ref.current, start: 'top 82%' },
+      })
       gsap.from('.blog-card', {
         opacity: 0,
-        y: 40,
+        y: 60,
+        scale: 0.93,
         stagger: 0.15,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 80%' },
+        duration: 0.9,
+        ease: 'power4.out',
+        scrollTrigger: { trigger: ref.current, start: 'top 78%' },
       })
     }, ref)
     return () => ctx.revert()
@@ -55,7 +63,7 @@ export default function BlogPreview() {
 
   return (
     <section ref={ref} className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between mb-12">
+      <div className="blog-heading flex items-center justify-between mb-12">
         <div>
           <h2 className="text-3xl font-bold text-white mb-2">Cable Splicing Resources</h2>
           <p className="text-slate-400">Industry knowledge for contractors and project owners.</p>

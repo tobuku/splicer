@@ -113,28 +113,39 @@ export default function CategoryGrid() {
         })
       }
 
-      // Stagger in cards
-      gsap.from('.cat-card', {
+      // Heading reveal
+      gsap.from('.cat-heading', {
         opacity: 0,
-        y: 50,
-        stagger: 0.15,
+        x: -30,
         duration: 0.8,
         ease: 'power3.out',
+        scrollTrigger: { trigger: ref.current, start: 'top 80%' },
+      })
+
+      // Stagger in cards with scale
+      gsap.from('.cat-card', {
+        opacity: 0,
+        y: 70,
+        scale: 0.92,
+        stagger: 0.15,
+        duration: 0.9,
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: ref.current,
-          start: 'top 80%',
+          start: 'top 75%',
         },
       })
 
       // Emergency card
       gsap.from('.emergency-card', {
         opacity: 0,
-        y: 30,
-        duration: 0.7,
+        y: 40,
+        scale: 0.97,
+        duration: 0.8,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: '.emergency-card',
-          start: 'top 85%',
+          start: 'top 88%',
         },
       })
     }, ref)
@@ -146,7 +157,7 @@ export default function CategoryGrid() {
     <section ref={ref} className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Left-aligned heading with blue left border */}
       <div className="mb-14">
-        <div className="border-l-4 border-[#0ea5e9] pl-4">
+        <div className="cat-heading border-l-4 border-[#0ea5e9] pl-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
             Splicing Services by Category
           </h2>

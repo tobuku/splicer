@@ -19,11 +19,12 @@ export default function TrustBar() {
     const ctx = gsap.context(() => {
       gsap.from('.trust-item', {
         opacity: 0,
-        y: 15,
-        stagger: 0.1,
-        duration: 0.5,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 90%' },
+        y: 20,
+        scale: 0.9,
+        stagger: 0.12,
+        duration: 0.6,
+        ease: 'back.out(1.4)',
+        scrollTrigger: { trigger: ref.current, start: 'top 92%' },
       })
     }, ref)
     return () => ctx.revert()
