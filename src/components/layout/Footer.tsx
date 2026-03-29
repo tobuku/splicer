@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const categories = [
   { label: 'Telecom Cable Splicing', href: '/telecom-cable-splicing' },
@@ -17,11 +18,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded bg-[var(--blue)] flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M4 4l4 4M4 20l4-4M20 4l-4 4M20 20l-4-4M12 2v4M12 18v4M2 12h4M18 12h4"/>
-                </svg>
-              </div>
+              <Image
+                src="/images/splicelist_logo.jpg"
+                alt="SpliceList"
+                width={130}
+                height={36}
+                className="h-9 w-auto object-contain"
+              />
               <span className="text-lg font-bold text-white">Splice<span className="text-[var(--blue)]">List</span></span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
