@@ -318,8 +318,8 @@ export default function HeroSection() {
           <div className="hero-photos hidden lg:grid grid-cols-2 gap-3">
             <div className="hero-photo-item col-span-2 rounded-xl overflow-hidden aspect-video shadow-2xl ring-1 ring-white/5">
               <Image
-                src="/images/fiber/IMG_1826.jpg"
-                alt="Fiber splice crew at work"
+                src="/images/fiber/IMG_0794.jpg"
+                alt="Fiber splice tray with completed splices"
                 width={560}
                 height={315}
                 className="w-full h-full object-cover"
