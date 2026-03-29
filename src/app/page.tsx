@@ -4,6 +4,7 @@ import CategoryGrid from '@/components/home/CategoryGrid'
 import HowItWorks from '@/components/home/HowItWorks'
 import TrustBar from '@/components/home/TrustBar'
 import BlogPreview from '@/components/home/BlogPreview'
+import StickyCallButton from '@/components/ui/StickyCallButton'
 
 export const metadata: Metadata = {
   title: 'Find Cable Splicing Contractors Near You',
@@ -18,6 +19,7 @@ export default function HomePage() {
       <CategoryGrid />
       <HowItWorks />
       <BlogPreview />
+      <StickyCallButton />
     </>
   )
 }
