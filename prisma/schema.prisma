@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(USER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("users")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Listing {
+  id               String     @id @default(cuid())
+  slug             String     @unique
+  businessName     String
+  description      String?
+  category         Category[]
+  services         String[]
+  phone            String?
+  email            String?
+  website          String?
+  address          String?
+  city             String
+  state            String
+  zip              String?
+  latitude         Float?
+  longitude        Float?
+  certifications   String[]
+  emergencyService Boolean    @default(false)
+  yearsInBusiness  Int?
+  rating           Float?
+  reviewCount      Int        @default(0)
+  verified         Boolean    @default(false)
+  published        Boolean    @default(false)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  importSource     String?
+
+  reviews Review[]
+  leads   Lead[]
+
+  @@index([state, city])
+  @@index([published])
+  @@map("listings")
+}
+
+enum Category {
+  TELECOM
+  FIBER
+  COPPER
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  listingId String
+  name      String
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@map("reviews")
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  listingId String
+  name      String
+  email     String
+  phone     String?
+  message   String?
+  createdAt DateTime @default(now())
+
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@map("leads")
+}
+
+model ImportLog {
+  id        String   @id @default(cuid())
+  source    String
+  total     Int
+  imported  Int
+  skipped   Int
+  errors    Int
+  createdAt DateTime @default(now())
+
+  @@map("import_logs")
+}
