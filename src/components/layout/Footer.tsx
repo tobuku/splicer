@@ -69,6 +69,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: 'List Your Business', href: '/listings/submit' },
+                { label: 'Tools & Equipment', href: '/tools' },
                 { label: 'Pricing', href: '/pricing' },
                 { label: 'Blog', href: '/blog' },
                 { label: 'Search', href: '/search' },

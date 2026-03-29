@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { TOOL_CATEGORIES, TOOLS } from '@/lib/tools'
 import ToolsPageClient from '@/components/tools/ToolsPageClient'
 import SchemaScript from '@/components/seo/SchemaScript'
@@ -34,6 +35,22 @@ export default function ToolsPage() {
             <p className="text-slate-400 text-lg max-w-2xl">
               Gear used by professional splice crews in the field. Curated by category — fusion splicers, OTDR units, fiber prep tools, copper splicing supplies, and safety equipment.
             </p>
+          </div>
+
+          {/* Field photo strip */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-12">
+            {[
+              { src: '/images/tools/IMG_0761.jpg', alt: 'Splicing tool' },
+              { src: '/images/tools/IMG_0762.jpg', alt: 'Fiber prep tool' },
+              { src: '/images/equipment/IMG_5898.jpg', alt: 'Fusion splicer' },
+              { src: '/images/equipment/IMG_5899.jpg', alt: 'OTDR equipment' },
+              { src: '/images/tools/IMG_0763.jpg', alt: 'Cable splicing tools' },
+              { src: '/images/equipment/IMG_6005.jpg', alt: 'Field equipment' },
+            ].map((photo) => (
+              <div key={photo.src} className="rounded-lg overflow-hidden aspect-square">
+                <Image src={photo.src} alt={photo.alt} width={200} height={200} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+            ))}
           </div>
 
           <ToolsPageClient categories={TOOL_CATEGORIES} tools={TOOLS} />

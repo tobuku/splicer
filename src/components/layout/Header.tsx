@@ -9,6 +9,7 @@ const nav = [
   { label: 'Telecom Splicing', href: '/telecom-cable-splicing' },
   { label: 'Fiber Optic', href: '/fiber-optic-splicing' },
   { label: 'Copper Cable', href: '/copper-cable-splicing' },
+  { label: 'Tools', href: '/tools' },
   { label: 'Emergency', href: '/services/emergency-repair', highlight: true },
   { label: 'Blog', href: '/blog' },
 ]
