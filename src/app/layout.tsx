@@ -22,10 +22,6 @@ export const metadata: Metadata = {
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
-  icons: {
-    icon: '/images/splicelist_favicon.png',
-    shortcut: '/images/splicelist_favicon.png',
-  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
