@@ -126,17 +126,17 @@ export default function AdminDashboard() {
 
   if (!authed) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0f1e]">
-        <form onSubmit={login} className="bg-[#0f172a] border border-slate-800 rounded-2xl p-8 w-full max-w-sm">
-          <h1 className="text-white font-bold text-xl mb-6">Admin Access</h1>
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <form onSubmit={login} className="bg-white border border-[#e8e8e8] rounded-2xl p-8 w-full max-w-sm">
+          <h1 className="text-[#1f1f1f] font-bold text-xl mb-6">Admin Access</h1>
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            className="w-full bg-[#1e293b] border border-slate-700 rounded-xl px-4 py-3 text-white text-sm outline-none mb-4"
+            className="w-full bg-[#f0f0f0] border border-[#e8e8e8] rounded-xl px-4 py-3 text-[#1f1f1f] text-sm outline-none mb-4"
           />
-          <button type="submit" className="w-full bg-[#0ea5e9] text-white py-3 rounded-xl font-semibold">
+          <button type="submit" className="w-full bg-[#0b5cff] text-white py-3 rounded-xl font-semibold">
             Login
           </button>
         </form>
@@ -145,13 +145,13 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0f1e] pt-20 pb-16">
+    <div className="min-h-screen bg-white pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-10">
-          <h1 className="text-2xl font-bold text-white">Admin Dashboard</h1>
+          <h1 className="text-2xl font-bold text-[#1f1f1f]">Admin Dashboard</h1>
           <button
             onClick={() => { sessionStorage.removeItem('ADMIN_AUTHED'); setAuthed(false) }}
-            className="text-slate-400 hover:text-white text-sm transition-colors"
+            className="text-[#555555] hover:text-[#1f1f1f] text-sm transition-colors"
           >
             Logout
           </button>
@@ -166,19 +166,19 @@ export default function AdminDashboard() {
               { label: 'Pending Review', value: stats.pending },
               { label: 'Total Leads', value: stats.leads },
             ].map((s) => (
-              <div key={s.label} className="bg-[#0f172a] border border-slate-800 rounded-xl p-5">
-                <div className="text-3xl font-bold text-[#0ea5e9]">{s.value}</div>
-                <div className="text-slate-400 text-sm mt-1">{s.label}</div>
+              <div key={s.label} className="bg-white border border-[#e8e8e8] rounded-xl p-5">
+                <div className="text-3xl font-bold text-[#0b5cff]">{s.value}</div>
+                <div className="text-[#555555] text-sm mt-1">{s.label}</div>
               </div>
             ))}
           </div>
         )}
 
         {/* Review Queue */}
-        <div className="bg-[#0f172a] border border-slate-800 rounded-2xl overflow-hidden mb-10">
-          <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
+        <div className="bg-white border border-[#e8e8e8] rounded-2xl overflow-hidden mb-10">
+          <div className="px-6 py-4 border-b border-[#e8e8e8] flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <h2 className="text-white font-semibold">Review Queue</h2>
+              <h2 className="text-[#1f1f1f] font-semibold">Review Queue</h2>
               {queue.length > 0 && (
                 <span className="text-[11px] font-semibold bg-amber-500/10 border border-amber-500/30 text-amber-400 px-2 py-0.5 rounded-full">
                   {queue.length} pending
@@ -187,7 +187,7 @@ export default function AdminDashboard() {
             </div>
             <button
               onClick={loadQueue}
-              className="text-slate-400 hover:text-white text-xs transition-colors"
+              className="text-[#555555] hover:text-[#1f1f1f] text-xs transition-colors"
             >
               Refresh
             </button>
@@ -195,27 +195,27 @@ export default function AdminDashboard() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-800">
-                  <th className="text-left text-slate-400 font-medium px-6 py-3">Business</th>
-                  <th className="text-left text-slate-400 font-medium px-4 py-3">Location</th>
-                  <th className="text-left text-slate-400 font-medium px-4 py-3">Category</th>
-                  <th className="text-left text-slate-400 font-medium px-4 py-3">Actions</th>
+                <tr className="border-b border-[#e8e8e8]">
+                  <th className="text-left text-[#555555] font-medium px-6 py-3">Business</th>
+                  <th className="text-left text-[#555555] font-medium px-4 py-3">Location</th>
+                  <th className="text-left text-[#555555] font-medium px-4 py-3">Category</th>
+                  <th className="text-left text-[#555555] font-medium px-4 py-3">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {queueLoading ? (
                   <tr>
-                    <td colSpan={4} className="text-slate-500 text-center py-8">Loading…</td>
+                    <td colSpan={4} className="text-[#777777] text-center py-8">Loading…</td>
                   </tr>
                 ) : queue.length === 0 ? (
                   <tr>
-                    <td colSpan={4} className="text-slate-500 text-center py-8">Queue is empty — nothing to review</td>
+                    <td colSpan={4} className="text-[#777777] text-center py-8">Queue is empty — nothing to review</td>
                   </tr>
                 ) : queue.map((l) => (
-                  <tr key={l.id} className="border-b border-slate-800/50 hover:bg-slate-800/20">
-                    <td className="px-6 py-3 text-white font-medium">{l.businessName}</td>
-                    <td className="px-4 py-3 text-slate-400">{l.city}, {l.state}</td>
-                    <td className="px-4 py-3 text-slate-400">{l.category.join(', ')}</td>
+                  <tr key={l.id} className="border-b border-[#e8e8e8]/50 hover:bg-[#f5f5f5]">
+                    <td className="px-6 py-3 text-[#1f1f1f] font-medium">{l.businessName}</td>
+                    <td className="px-4 py-3 text-[#555555]">{l.city}, {l.state}</td>
+                    <td className="px-4 py-3 text-[#555555]">{l.category.join(', ')}</td>
                     <td className="px-4 py-3">
                       <div className="flex gap-2">
                         <button
@@ -240,32 +240,32 @@ export default function AdminDashboard() {
         </div>
 
         {/* Listings table */}
-        <div className="bg-[#0f172a] border border-slate-800 rounded-2xl overflow-hidden mb-10">
-          <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
-            <h2 className="text-white font-semibold">Listings</h2>
-            <a href="/admin/listings" className="text-[#0ea5e9] text-sm hover:underline">View all</a>
+        <div className="bg-white border border-[#e8e8e8] rounded-2xl overflow-hidden mb-10">
+          <div className="px-6 py-4 border-b border-[#e8e8e8] flex items-center justify-between">
+            <h2 className="text-[#1f1f1f] font-semibold">Listings</h2>
+            <a href="/admin/listings" className="text-[#0b5cff] text-sm hover:underline">View all</a>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-800">
-                  <th className="text-left text-slate-400 font-medium px-6 py-3">Business</th>
-                  <th className="text-left text-slate-400 font-medium px-4 py-3">Location</th>
-                  <th className="text-left text-slate-400 font-medium px-4 py-3">Category</th>
-                  <th className="text-left text-slate-400 font-medium px-4 py-3">Status</th>
-                  <th className="text-left text-slate-400 font-medium px-4 py-3">Actions</th>
+                <tr className="border-b border-[#e8e8e8]">
+                  <th className="text-left text-[#555555] font-medium px-6 py-3">Business</th>
+                  <th className="text-left text-[#555555] font-medium px-4 py-3">Location</th>
+                  <th className="text-left text-[#555555] font-medium px-4 py-3">Category</th>
+                  <th className="text-left text-[#555555] font-medium px-4 py-3">Status</th>
+                  <th className="text-left text-[#555555] font-medium px-4 py-3">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {listings.length === 0 ? (
                   <tr>
-                    <td colSpan={5} className="text-slate-500 text-center py-8">No listings found</td>
+                    <td colSpan={5} className="text-[#777777] text-center py-8">No listings found</td>
                   </tr>
                 ) : listings.map((l) => (
-                  <tr key={l.id} className="border-b border-slate-800/50 hover:bg-slate-800/20">
-                    <td className="px-6 py-3 text-white font-medium">{l.businessName}</td>
-                    <td className="px-4 py-3 text-slate-400">{l.city}, {l.state}</td>
-                    <td className="px-4 py-3 text-slate-400">{l.category.join(', ')}</td>
+                  <tr key={l.id} className="border-b border-[#e8e8e8]/50 hover:bg-[#f5f5f5]">
+                    <td className="px-6 py-3 text-[#1f1f1f] font-medium">{l.businessName}</td>
+                    <td className="px-4 py-3 text-[#555555]">{l.city}, {l.state}</td>
+                    <td className="px-4 py-3 text-[#555555]">{l.category.join(', ')}</td>
                     <td className="px-4 py-3">
                       <span className={`text-xs font-semibold px-2 py-1 rounded-full ${l.published ? 'text-emerald-400 bg-emerald-400/10' : 'text-amber-400 bg-amber-400/10'}`}>
                         {l.published ? 'Published' : 'Pending'}
@@ -275,7 +275,7 @@ export default function AdminDashboard() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => togglePublish(l.id, l.published)}
-                          className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-lg transition-colors"
+                          className="text-xs bg-[#eeeeee] hover:bg-gray-300 text-[#1f1f1f] px-3 py-1.5 rounded-lg transition-colors"
                         >
                           {l.published ? 'Unpublish' : 'Publish'}
                         </button>
@@ -295,9 +295,9 @@ export default function AdminDashboard() {
         </div>
 
         {/* Import section */}
-        <div className="bg-[#0f172a] border border-slate-800 rounded-2xl p-6">
-          <h2 className="text-white font-semibold mb-2">Import Listings (JSON)</h2>
-          <p className="text-slate-400 text-sm mb-4">
+        <div className="bg-white border border-[#e8e8e8] rounded-2xl p-6">
+          <h2 className="text-[#1f1f1f] font-semibold mb-2">Import Listings (JSON)</h2>
+          <p className="text-[#555555] text-sm mb-4">
             Paste a JSON array of listings from Outscraper / Google Sheets export.
           </p>
           <textarea
@@ -305,17 +305,17 @@ export default function AdminDashboard() {
             onChange={e => setImportJson(e.target.value)}
             rows={8}
             placeholder='[{"business_name": "...", "city": "...", "state": "...", "category": ["FIBER"], ...}]'
-            className="w-full bg-[#1e293b] border border-slate-700 rounded-xl px-4 py-3 text-slate-300 font-mono text-xs outline-none mb-4 resize-none"
+            className="w-full bg-[#f0f0f0] border border-[#e8e8e8] rounded-xl px-4 py-3 text-[#555555] font-mono text-xs outline-none mb-4 resize-none"
           />
           <button
             onClick={runImport}
             disabled={loading || !importJson.trim()}
-            className="bg-[#0ea5e9] hover:bg-[#0284c7] disabled:opacity-50 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+            className="bg-[#0b5cff] hover:bg-[#0946cc] disabled:opacity-50 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-colors"
           >
             {loading ? 'Importing...' : 'Run Import'}
           </button>
           {importResult && (
-            <pre className="mt-4 bg-[#060c18] border border-slate-800 rounded-xl p-4 text-xs text-slate-300 overflow-auto max-h-48">
+            <pre className="mt-4 bg-[#f8f8f8] border border-[#e8e8e8] rounded-xl p-4 text-xs text-[#555555] overflow-auto max-h-48">
               {importResult}
             </pre>
           )}

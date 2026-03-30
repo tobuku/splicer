@@ -34,38 +34,15 @@ export default function HowItWorks() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     const ctx = gsap.context(() => {
-      // Section heading
       gsap.from('.hiw-heading', {
         opacity: 0,
-        y: 40,
-        duration: 0.8,
+        y: 30,
+        duration: 0.7,
         ease: 'power3.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 78%' },
-      })
-
-      // Steps: slide + scale in
-      gsap.from('.step-item', {
-        opacity: 0,
-        x: -50,
-        scale: 0.96,
-        stagger: 0.18,
-        duration: 0.85,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 72%' },
-      })
-
-      // Step numbers scale-pulse when they enter
-      gsap.from('.step-num', {
-        scale: 2.5,
-        opacity: 0,
-        stagger: 0.18,
-        duration: 0.6,
-        ease: 'power4.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 72%' },
+        scrollTrigger: { trigger: ref.current, start: 'top 92%' },
       })
 
       if (!prefersReduced) {
-        // Photo parallax — each image scrolls at a slightly different rate
         const photoParallax = [
           { el: photo1Ref.current, y: -50 },
           { el: photo2Ref.current, y: -30 },
@@ -84,17 +61,6 @@ export default function HowItWorks() {
             },
           })
         })
-
-        // Photos stagger reveal on entry
-        gsap.from('.hiw-photo', {
-          opacity: 0,
-          scale: 0.88,
-          y: 50,
-          stagger: 0.2,
-          duration: 1.0,
-          ease: 'power4.out',
-          scrollTrigger: { trigger: '.hiw-photo-grid', start: 'top 80%' },
-        })
       }
     }, ref)
 
@@ -102,30 +68,30 @@ export default function HowItWorks() {
   }, [])
 
   return (
-    <section ref={ref} className="py-20 bg-[#060c18] border-y border-slate-800/50">
+    <section ref={ref} className="py-14 bg-[#f8f8f8] border-y border-[#e8e8e8]/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
           {/* Left — steps */}
           <div>
-            <div className="hiw-heading mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <div className="hiw-heading mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#1f1f1f] mb-4">
                 How SpliceList Works
               </h2>
-              <p className="text-slate-400 text-lg">
+              <p className="text-[#555555] text-lg">
                 Connecting job owners with qualified splice crews in three steps.
               </p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {steps.map((step, i) => (
                 <div key={i} className="step-item flex gap-5">
-                  <div className="step-num text-4xl font-black text-[#0ea5e9]/20 leading-none w-12 shrink-0 tabular-nums">
+                  <div className="step-num text-4xl font-black text-[#0b5cff]/20 leading-none w-12 shrink-0 tabular-nums">
                     {step.num}
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
+                    <h3 className="text-[#1f1f1f] font-semibold text-lg mb-2">{step.title}</h3>
+                    <p className="text-[#555555] text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -135,7 +101,7 @@ export default function HowItWorks() {
           {/* Right — photo grid with parallax */}
           <div className="hiw-photo-grid relative hidden lg:block">
             <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
-              <div ref={photo1Ref} className="hiw-photo col-span-2 rounded-xl overflow-hidden aspect-video shadow-2xl ring-1 ring-white/5">
+              <div ref={photo1Ref} className="hiw-photo col-span-2 rounded-xl overflow-hidden aspect-video shadow-2xl ring-1 ring-[#e8e8e8]">
                 <Image
                   src="/images/fiber/IMG_0989.jpg"
                   alt="Fiber optic splice technician"
@@ -144,7 +110,7 @@ export default function HowItWorks() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div ref={photo2Ref} className="hiw-photo rounded-xl overflow-hidden aspect-square shadow-xl ring-1 ring-white/5">
+              <div ref={photo2Ref} className="hiw-photo rounded-xl overflow-hidden aspect-square shadow-xl ring-1 ring-[#e8e8e8]">
                 <Image
                   src="/images/copper/IMG_0024.jpg"
                   alt="Copper cable splicing"
@@ -153,7 +119,7 @@ export default function HowItWorks() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div ref={photo3Ref} className="hiw-photo rounded-xl overflow-hidden aspect-square shadow-xl ring-1 ring-white/5">
+              <div ref={photo3Ref} className="hiw-photo rounded-xl overflow-hidden aspect-square shadow-xl ring-1 ring-[#e8e8e8]">
                 <Image
                   src="/images/equipment/IMG_5898.jpg"
                   alt="Splice equipment"
@@ -163,7 +129,7 @@ export default function HowItWorks() {
                 />
               </div>
             </div>
-            <div className="absolute inset-0 rounded-2xl bg-[#0ea5e9]/5 blur-xl -z-10" />
+            <div className="absolute inset-0 rounded-2xl bg-[#0b5cff]/5 blur-xl -z-10" />
           </div>
 
         </div>

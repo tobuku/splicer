@@ -16,12 +16,12 @@ export default function RecommendedTools({ splicingCategory, limit = 4 }: Props)
   if (tools.length === 0) return null
 
   return (
-    <section className="py-16 border-t border-slate-800/50">
+    <section className="py-16 border-t border-[#e8e8e8]/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-1">Recommended Equipment</h2>
-            <p className="text-slate-400 text-sm">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-1">Recommended Equipment</h2>
+            <p className="text-[#555555] text-sm">
               {splicingCategory
                 ? `Tools used by professional ${splicingCategory === 'FIBER' ? 'fiber optic' : splicingCategory === 'COPPER' ? 'copper cable' : 'telecom'} splice crews.`
                 : 'Field-tested gear used by professional splice crews.'}
@@ -29,7 +29,7 @@ export default function RecommendedTools({ splicingCategory, limit = 4 }: Props)
           </div>
           <Link
             href="/tools"
-            className="text-[#0ea5e9] hover:text-[#0284c7] text-sm font-semibold transition-colors hidden sm:block whitespace-nowrap"
+            className="text-[#0b5cff] hover:text-[#0946cc] text-sm font-semibold transition-colors hidden sm:block whitespace-nowrap"
           >
             See All Tools &rarr;
           </Link>
@@ -42,12 +42,12 @@ export default function RecommendedTools({ splicingCategory, limit = 4 }: Props)
         </div>
 
         <div className="mt-4 sm:hidden">
-          <Link href="/tools" className="text-[#0ea5e9] text-sm font-semibold">
+          <Link href="/tools" className="text-[#0b5cff] text-sm font-semibold">
             See All Tools &rarr;
           </Link>
         </div>
 
-        <p className="text-slate-700 text-xs mt-6">
+        <p className="text-[#555555] text-xs mt-6">
           Affiliate links — SpliceList earns a small commission at no cost to you.
         </p>
       </div>

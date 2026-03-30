@@ -68,32 +68,11 @@ export default function StickyCallButton() {
     <div
       ref={containerRef}
       className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2"
-      style={{ opacity: 0 }} // start hidden, GSAP animates in
+      style={{ opacity: 0 }}
     >
-      {/* Emergency button */}
-      <Link
-        href="/services/emergency-repair"
-        className="pulse-ring flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-white font-semibold text-sm px-5 py-3 rounded-full shadow-xl transition-colors duration-200 whitespace-nowrap"
-        title="Emergency Repair"
-      >
-        <span className="sm:inline hidden">⚡ Emergency</span>
-        <span className="sm:hidden" aria-label="Emergency Repair">⚡</span>
-      </Link>
-
-      {/* Dismiss button — between the two */}
-      <button
-        onClick={handleDismiss}
-        className="self-center w-6 h-6 rounded-full bg-slate-700 hover:bg-slate-600 text-slate-400 hover:text-white text-xs flex items-center justify-center transition-colors duration-200 shadow-md"
-        aria-label="Dismiss"
-        title="Dismiss"
-      >
-        ×
-      </button>
-
-      {/* Find Contractors button */}
       <Link
         href="/search"
-        className="flex items-center gap-2 bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold text-sm px-5 py-3 rounded-full shadow-xl transition-colors duration-200 whitespace-nowrap"
+        className="flex items-center gap-2 bg-[#0b5cff] hover:bg-[#0946cc] text-white font-semibold text-sm px-5 py-3 rounded-full shadow-xl transition-colors duration-200 whitespace-nowrap"
         title="Find Contractors"
       >
         <svg
@@ -108,6 +87,14 @@ export default function StickyCallButton() {
         </svg>
         <span className="sm:inline hidden">Find Contractors</span>
       </Link>
+      <button
+        onClick={handleDismiss}
+        className="self-center w-6 h-6 rounded-full bg-[#eeeeee] hover:bg-gray-300 text-[#555555] hover:text-[#1f1f1f] text-xs flex items-center justify-center transition-colors duration-200 shadow-md"
+        aria-label="Dismiss"
+        title="Dismiss"
+      >
+        ×
+      </button>
     </div>
   )
 }

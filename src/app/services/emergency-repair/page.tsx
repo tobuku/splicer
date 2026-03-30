@@ -34,15 +34,15 @@ export default function EmergencyRepairPage() {
       <div className="pt-28 pb-20 min-h-screen">
 
         {/* Hero */}
-        <div className="bg-gradient-to-b from-amber-900/20 to-transparent border-b border-slate-800/50">
+        <div className="bg-gradient-to-b from-amber-900/20 to-transparent border-b border-[#e8e8e8]/50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-sm font-medium mb-5">
               24/7 Emergency Response
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-5">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#1f1f1f] leading-tight mb-5">
               Emergency Cable &amp; Fiber Optic Repair Services
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed mb-8">
+            <p className="text-lg text-[#555555] leading-relaxed mb-8">
               Cable cuts, storm damage, and downed lines cannot wait. SpliceList connects you with contractors who carry emergency response capabilities and can mobilize fast to restore your service.
             </p>
             <ListingSearchWidget defaultCategory="" />
@@ -53,12 +53,12 @@ export default function EmergencyRepairPage() {
 
           {/* Emergency types */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6">Types of Cable Emergencies We Cover</h2>
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-6">Types of Cable Emergencies We Cover</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {emergencyTypes.map((item) => (
-                <div key={item.title} className="bg-[#0f172a] border border-amber-500/20 rounded-xl p-5">
+                <div key={item.title} className="bg-white border border-amber-500/20 rounded-xl p-5">
                   <h3 className="text-amber-400 font-semibold mb-2">{item.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-[#555555] text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -66,21 +66,21 @@ export default function EmergencyRepairPage() {
 
           {/* What counts as an emergency */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">What Qualifies as a Cable Emergency?</h2>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">What Qualifies as a Cable Emergency?</h2>
+            <p className="text-[#555555] leading-relaxed mb-4">
               A cable emergency is any failure that causes immediate service disruption, financial loss, or public safety risk. In practice, this means any event where waiting for a standard work order — which could take days — is not an option.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <p className="text-[#555555] leading-relaxed mb-4">
               Common emergency triggers include: carrier or enterprise fiber cuts that take circuits offline, storm damage that leaves aerial plant down in a roadway, excavation strikes that sever a buried cable feeding a neighborhood or business park, and vault flooding that threatens active splice closures. If your service is down or at imminent risk and the cause is physical cable damage, that is an emergency.
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-[#555555] leading-relaxed">
               Emergency splicing differs from scheduled work in cost, response time expectation, and crew readiness. Contractors who respond to emergencies typically carry equipment in their vehicle at all times, are available after hours, and can make a binding commitment to an on-site arrival time — usually 2–4 hours within their coverage area.
             </p>
           </section>
 
           {/* How to get help */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-5">How to Get Emergency Cable Repair Fast</h2>
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-5">How to Get Emergency Cable Repair Fast</h2>
             <div className="space-y-4">
               {[
                 {
@@ -104,11 +104,11 @@ export default function EmergencyRepairPage() {
                   desc: 'Verify ETA, confirm they have the right equipment for your fiber type or cable gauge, and get a confirmation of dispatch.',
                 },
               ].map((step) => (
-                <div key={step.num} className="flex gap-4 bg-[#0f172a] border border-slate-800 rounded-xl p-4">
+                <div key={step.num} className="flex gap-4 bg-white border border-[#e8e8e8] rounded-xl p-4">
                   <span className="text-3xl font-black text-amber-500/30 leading-none w-8 shrink-0">{step.num}</span>
                   <div>
-                    <div className="text-white font-semibold mb-1">{step.title}</div>
-                    <div className="text-slate-400 text-sm">{step.desc}</div>
+                    <div className="text-[#1f1f1f] font-semibold mb-1">{step.title}</div>
+                    <div className="text-[#555555] text-sm">{step.desc}</div>
                   </div>
                 </div>
               ))}
@@ -117,8 +117,8 @@ export default function EmergencyRepairPage() {
 
           {/* What to tell the contractor */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">What to Tell the Contractor</h2>
-            <p className="text-slate-400 leading-relaxed mb-5">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">What to Tell the Contractor</h2>
+            <p className="text-[#555555] leading-relaxed mb-5">
               Getting accurate information to the contractor upfront saves time and ensures they arrive with the right tools. Before you call, gather as much of the following as possible:
             </p>
             <ul className="space-y-3">
@@ -129,11 +129,11 @@ export default function EmergencyRepairPage() {
                 { label: 'Services affected', detail: 'What is down — internet, telephone, carrier circuits? Are any public safety or critical systems involved?' },
                 { label: 'Cause of damage', detail: 'Excavation strike, vehicle accident, storm damage, or unknown. This helps the contractor know what they may be walking into.' },
               ].map((item) => (
-                <li key={item.label} className="flex gap-4 bg-[#0f172a] border border-slate-800 rounded-xl p-4">
+                <li key={item.label} className="flex gap-4 bg-white border border-[#e8e8e8] rounded-xl p-4">
                   <span className="text-amber-400 mt-0.5 shrink-0 font-bold">&#8594;</span>
                   <div>
-                    <div className="text-white font-semibold text-sm mb-1">{item.label}</div>
-                    <div className="text-slate-400 text-sm">{item.detail}</div>
+                    <div className="text-[#1f1f1f] font-semibold text-sm mb-1">{item.label}</div>
+                    <div className="text-[#555555] text-sm">{item.detail}</div>
                   </div>
                 </li>
               ))}
@@ -141,30 +141,30 @@ export default function EmergencyRepairPage() {
           </section>
 
           {/* Internal links */}
-          <section className="border-t border-slate-800 pt-10">
-            <h3 className="text-white font-semibold mb-4">Related Services</h3>
+          <section className="border-t border-[#e8e8e8] pt-10">
+            <h3 className="text-[#1f1f1f] font-semibold mb-4">Related Services</h3>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/fiber-optic-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Fiber Optic Splicing
               </Link>
               <Link
                 href="/copper-cable-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Copper Cable Splicing
               </Link>
               <Link
                 href="/telecom-cable-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Telecom Splicing
               </Link>
               <Link
                 href="/search"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-[#0ea5e9] px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-[#0b5cff] px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Search All Contractors
               </Link>

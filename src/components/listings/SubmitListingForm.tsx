@@ -81,10 +81,10 @@ export default function SubmitListingForm() {
 
   if (submitted) {
     return (
-      <div className="bg-[#0f172a] border border-emerald-500/30 rounded-2xl p-10 text-center max-w-lg mx-auto">
+      <div className="bg-white border border-emerald-500/30 rounded-2xl p-10 text-center max-w-lg mx-auto">
         <div className="text-4xl mb-4 text-emerald-400">&#10003;</div>
-        <h2 className="text-xl font-bold text-white mb-3">Listing Submitted</h2>
-        <p className="text-slate-400 text-sm leading-relaxed">
+        <h2 className="text-xl font-bold text-[#1f1f1f] mb-3">Listing Submitted</h2>
+        <p className="text-[#555555] text-sm leading-relaxed">
           Your listing has been received. We review submissions within 1–2 business days and will contact you at the email address you provided if we need additional information.
         </p>
       </div>
@@ -96,39 +96,39 @@ export default function SubmitListingForm() {
 
       {/* Business Info */}
       <fieldset>
-        <legend className="text-white font-bold text-lg mb-5 pb-2 border-b border-slate-800 w-full">Business Information</legend>
+        <legend className="text-[#1f1f1f] font-bold text-lg mb-5 pb-2 border-b border-[#e8e8e8] w-full">Business Information</legend>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
           <div className="sm:col-span-2">
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="businessName">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="businessName">
               Business Name <span className="text-red-400">*</span>
             </label>
             <input
               id="businessName"
               type="text"
               {...register('businessName', { required: 'Business name is required' })}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors"
               placeholder="Acme Fiber Solutions LLC"
             />
             {errors.businessName && <p className="text-red-400 text-xs mt-1.5">{errors.businessName.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="phone">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="phone">
               Phone <span className="text-red-400">*</span>
             </label>
             <input
               id="phone"
               type="tel"
               {...register('phone', { required: 'Phone number is required' })}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors"
               placeholder="(808) 555-0100"
             />
             {errors.phone && <p className="text-red-400 text-xs mt-1.5">{errors.phone.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="email">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="email">
               Email <span className="text-red-400">*</span>
             </label>
             <input
@@ -138,21 +138,21 @@ export default function SubmitListingForm() {
                 required: 'Email is required',
                 pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Enter a valid email address' },
               })}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors"
               placeholder="info@example.com"
             />
             {errors.email && <p className="text-red-400 text-xs mt-1.5">{errors.email.message}</p>}
           </div>
 
           <div className="sm:col-span-2">
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="website">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="website">
               Website
             </label>
             <input
               id="website"
               type="url"
               {...register('website')}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors"
               placeholder="https://www.example.com"
             />
           </div>
@@ -161,30 +161,30 @@ export default function SubmitListingForm() {
 
       {/* Location */}
       <fieldset>
-        <legend className="text-white font-bold text-lg mb-5 pb-2 border-b border-slate-800 w-full">Service Location</legend>
+        <legend className="text-[#1f1f1f] font-bold text-lg mb-5 pb-2 border-b border-[#e8e8e8] w-full">Service Location</legend>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="city">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="city">
               City <span className="text-red-400">*</span>
             </label>
             <input
               id="city"
               type="text"
               {...register('city', { required: 'City is required' })}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors"
               placeholder="Honolulu"
             />
             {errors.city && <p className="text-red-400 text-xs mt-1.5">{errors.city.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="state">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="state">
               State <span className="text-red-400">*</span>
             </label>
             <select
               id="state"
               {...register('state', { required: 'State is required' })}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors appearance-none"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] text-sm outline-none transition-colors appearance-none"
             >
               <option value="">Select state</option>
               {US_STATES.map((s) => (
@@ -195,7 +195,7 @@ export default function SubmitListingForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="zip">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="zip">
               Zip Code <span className="text-red-400">*</span>
             </label>
             <input
@@ -205,7 +205,7 @@ export default function SubmitListingForm() {
                 required: 'Zip code is required',
                 pattern: { value: /^\d{5}(-\d{4})?$/, message: 'Enter a valid zip code' },
               })}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors"
               placeholder="96813"
             />
             {errors.zip && <p className="text-red-400 text-xs mt-1.5">{errors.zip.message}</p>}
@@ -215,7 +215,7 @@ export default function SubmitListingForm() {
 
       {/* Category */}
       <fieldset>
-        <legend className="text-white font-bold text-lg mb-5 pb-2 border-b border-slate-800 w-full">Primary Category <span className="text-red-400">*</span></legend>
+        <legend className="text-[#1f1f1f] font-bold text-lg mb-5 pb-2 border-b border-[#e8e8e8] w-full">Primary Category <span className="text-red-400">*</span></legend>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {CATEGORY_OPTIONS.map((opt) => {
             const selected = watch('category') === opt.value
@@ -224,8 +224,8 @@ export default function SubmitListingForm() {
                 key={opt.value}
                 className={`flex items-center justify-center gap-2 border rounded-xl px-4 py-3 text-sm font-medium cursor-pointer transition-all ${
                   selected
-                    ? 'border-[#0ea5e9] bg-[#0ea5e9]/10 text-[#0ea5e9]'
-                    : 'border-slate-700 bg-[#0a0f1e] text-slate-400 hover:border-slate-500'
+                    ? 'border-[#0b5cff] bg-[#0b5cff]/10 text-[#0b5cff]'
+                    : 'border-[#e8e8e8] bg-white text-[#555555] hover:border-slate-500'
                 }`}
               >
                 <input
@@ -243,20 +243,20 @@ export default function SubmitListingForm() {
 
       {/* Services */}
       <fieldset>
-        <legend className="text-white font-bold text-lg mb-5 pb-2 border-b border-slate-800 w-full">Services Offered</legend>
+        <legend className="text-[#1f1f1f] font-bold text-lg mb-5 pb-2 border-b border-[#e8e8e8] w-full">Services Offered</legend>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {SERVICE_OPTIONS.map((opt) => (
             <label
               key={opt.value}
-              className="flex items-center gap-3 bg-[#0a0f1e] border border-slate-700 hover:border-slate-500 rounded-xl px-4 py-3 cursor-pointer transition-all group"
+              className="flex items-center gap-3 bg-white border border-[#e8e8e8] hover:border-slate-500 rounded-xl px-4 py-3 cursor-pointer transition-all group"
             >
               <input
                 type="checkbox"
                 value={opt.value}
                 {...register('services')}
-                className="w-4 h-4 rounded border-slate-600 bg-[#0a0f1e] accent-[#0ea5e9]"
+                className="w-4 h-4 rounded border-[#e0e0e0] bg-white accent-[#0b5cff]"
               />
-              <span className="text-slate-300 text-sm group-hover:text-white transition-colors">{opt.label}</span>
+              <span className="text-[#555555] text-sm group-hover:text-[#1f1f1f] transition-colors">{opt.label}</span>
             </label>
           ))}
         </div>
@@ -264,10 +264,10 @@ export default function SubmitListingForm() {
 
       {/* Description */}
       <fieldset>
-        <legend className="text-white font-bold text-lg mb-5 pb-2 border-b border-slate-800 w-full">Business Description</legend>
+        <legend className="text-[#1f1f1f] font-bold text-lg mb-5 pb-2 border-b border-[#e8e8e8] w-full">Business Description</legend>
         <div className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="description">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="description">
               Description <span className="text-red-400">*</span>
             </label>
             <textarea
@@ -277,21 +277,21 @@ export default function SubmitListingForm() {
                 required: 'Description is required',
                 minLength: { value: 50, message: 'Please write at least 50 characters' },
               })}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors resize-none"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors resize-none"
               placeholder="Describe your business, service area, years in operation, and the types of projects you specialize in..."
             />
             {errors.description && <p className="text-red-400 text-xs mt-1.5">{errors.description.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-1.5" htmlFor="certifications">
+            <label className="block text-sm font-medium text-[#555555] mb-1.5" htmlFor="certifications">
               Certifications &amp; Credentials
             </label>
             <input
               id="certifications"
               type="text"
               {...register('certifications')}
-              className="w-full bg-[#0a0f1e] border border-slate-700 focus:border-[#0ea5e9] rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition-colors"
+              className="w-full bg-white border border-[#e8e8e8] focus:border-[#0b5cff] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none transition-colors"
               placeholder="FOA CFOT, BICSI Installer, OSHA 30, etc."
             />
           </div>
@@ -307,12 +307,12 @@ export default function SubmitListingForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-6 py-4 rounded-xl text-sm transition-colors"
+        className="w-full bg-[#0b5cff] hover:bg-[#0946cc] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-6 py-4 rounded-xl text-sm transition-colors"
       >
         {isSubmitting ? 'Submitting...' : 'Submit Listing'}
       </button>
 
-      <p className="text-slate-500 text-xs text-center">
+      <p className="text-[#777777] text-xs text-center">
         All listings are reviewed before going live. We will contact you at the email address above if we have questions.
       </p>
     </form>

@@ -104,14 +104,14 @@ const faqs = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-[#0a0f1e]">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="pt-24 pb-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl font-black text-[#1f1f1f] mb-4">
             Simple, Transparent Pricing
           </h1>
-          <p className="text-slate-400 text-lg leading-relaxed">
+          <p className="text-[#555555] text-lg leading-relaxed">
             Get your cable splicing operation in front of the contractors who need you.
             Start free — upgrade when you want more visibility.
           </p>
@@ -126,33 +126,33 @@ export default function PricingPage() {
               key={tier.name}
               className={`relative flex flex-col rounded-2xl border p-8 ${
                 tier.highlight
-                  ? 'bg-[#0ea5e9]/10 border-[#0ea5e9] shadow-[0_0_40px_rgba(14,165,233,0.15)]'
-                  : 'bg-[#0f172a] border-slate-800'
+                  ? 'bg-[#0b5cff]/10 border-[#0b5cff] shadow-[0_0_40px_rgba(14,165,233,0.15)]'
+                  : 'bg-white border-[#e8e8e8]'
               }`}
             >
               {tier.highlight && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#0ea5e9] text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">
+                  <span className="bg-[#0b5cff] text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">
                     Most Popular
                   </span>
                 </div>
               )}
 
               <div className="mb-6">
-                <h2 className="text-white font-bold text-xl mb-1">{tier.name}</h2>
+                <h2 className="text-[#1f1f1f] font-bold text-xl mb-1">{tier.name}</h2>
                 <div className="flex items-end gap-1 mb-3">
-                  <span className="text-4xl font-black text-white">{tier.price}</span>
-                  <span className="text-slate-400 text-sm mb-1">/{tier.period}</span>
+                  <span className="text-4xl font-black text-[#1f1f1f]">{tier.price}</span>
+                  <span className="text-[#555555] text-sm mb-1">/{tier.period}</span>
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed">{tier.description}</p>
+                <p className="text-[#555555] text-sm leading-relaxed">{tier.description}</p>
               </div>
 
               <Link
                 href={tier.href}
                 className={`block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-colors mb-8 ${
                   tier.highlight
-                    ? 'bg-[#0ea5e9] hover:bg-[#0284c7] text-white'
-                    : 'bg-slate-800 hover:bg-slate-700 text-white'
+                    ? 'bg-[#0b5cff] hover:bg-[#0946cc] text-white'
+                    : 'bg-[#eeeeee] hover:bg-gray-300 text-[#1f1f1f]'
                 }`}
               >
                 {tier.cta}
@@ -161,7 +161,7 @@ export default function PricingPage() {
               <div className="flex-1">
                 <ul className="space-y-3">
                   {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-[#555555]">
                       <svg className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
@@ -169,8 +169,8 @@ export default function PricingPage() {
                     </li>
                   ))}
                   {tier.notIncluded.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-slate-600">
-                      <svg className="w-4 h-4 text-slate-700 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-[#777777]">
+                      <svg className="w-4 h-4 text-gray-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                       {f}
@@ -184,19 +184,19 @@ export default function PricingPage() {
       </section>
 
       {/* Value prop strip */}
-      <section className="border-y border-slate-800 bg-[#0f172a] py-12 px-4">
+      <section className="border-y border-[#e8e8e8] bg-white py-12 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div>
-            <div className="text-2xl font-black text-[#0ea5e9] mb-1">No Ads</div>
-            <p className="text-slate-400 text-sm">Every result is a real contractor profile — not a sponsored placement.</p>
+            <div className="text-2xl font-black text-[#0b5cff] mb-1">No Ads</div>
+            <p className="text-[#555555] text-sm">Every result is a real contractor profile — not a sponsored placement.</p>
           </div>
           <div>
-            <div className="text-2xl font-black text-[#0ea5e9] mb-1">Industry-Specific</div>
-            <p className="text-slate-400 text-sm">Built for fiber, copper, and telecom splicing — not a generic contractor directory.</p>
+            <div className="text-2xl font-black text-[#0b5cff] mb-1">Industry-Specific</div>
+            <p className="text-[#555555] text-sm">Built for fiber, copper, and telecom splicing — not a generic contractor directory.</p>
           </div>
           <div>
-            <div className="text-2xl font-black text-[#0ea5e9] mb-1">Cancel Anytime</div>
-            <p className="text-slate-400 text-sm">Month-to-month billing. No contracts, no cancellation fees.</p>
+            <div className="text-2xl font-black text-[#0b5cff] mb-1">Cancel Anytime</div>
+            <p className="text-[#555555] text-sm">Month-to-month billing. No contracts, no cancellation fees.</p>
           </div>
         </div>
       </section>
@@ -204,12 +204,12 @@ export default function PricingPage() {
       {/* FAQ */}
       <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="bg-[#0f172a] border border-slate-800 rounded-2xl p-6">
-                <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p>
+              <div key={faq.q} className="bg-white border border-[#e8e8e8] rounded-2xl p-6">
+                <h3 className="text-[#1f1f1f] font-semibold mb-2">{faq.q}</h3>
+                <p className="text-[#555555] text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -219,11 +219,11 @@ export default function PricingPage() {
       {/* Bottom CTA */}
       <section className="pb-24 px-4 text-center">
         <div className="max-w-xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-3">Ready to get listed?</h2>
-          <p className="text-slate-400 mb-6 text-sm">It takes less than 5 minutes to create your free listing.</p>
+          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-3">Ready to get listed?</h2>
+          <p className="text-[#555555] mb-6 text-sm">It takes less than 5 minutes to create your free listing.</p>
           <Link
             href="/list-your-business"
-            className="inline-block bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8 py-3.5 rounded-xl font-semibold transition-colors"
+            className="inline-block bg-[#0b5cff] hover:bg-[#0946cc] text-white px-8 py-3.5 rounded-xl font-semibold transition-colors"
           >
             Create Your Free Listing
           </Link>

@@ -26,13 +26,13 @@ export default function ToolsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero */}
           <div className="mb-12">
-            <div className="inline-flex items-center gap-2 bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 text-[#0ea5e9] px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#0b5cff]/10 border border-[#0b5cff]/30 text-[#0b5cff] px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               Field-Tested Equipment
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#1f1f1f] mb-4">
               Cable Splicing Tools &amp; Equipment
             </h1>
-            <p className="text-slate-400 text-lg max-w-2xl">
+            <p className="text-[#555555] text-lg max-w-2xl">
               Gear used by professional splice crews in the field. Curated by category — fusion splicers, OTDR units, fiber prep tools, copper splicing supplies, and safety equipment.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function ToolsPage() {
           <ToolsPageClient categories={TOOL_CATEGORIES} tools={TOOLS} />
 
           {/* Affiliate disclaimer */}
-          <p className="text-slate-600 text-xs text-center mt-16 border-t border-slate-800/50 pt-6">
+          <p className="text-[#777777] text-xs text-center mt-16 border-t border-[#e8e8e8]/50 pt-6">
             Links on this page are Amazon affiliate links. SpliceList earns a small commission at no extra cost to you. Recommendations are based on industry use — not advertising agreements.
           </p>
         </div>

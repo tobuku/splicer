@@ -41,15 +41,15 @@ export default function CopperCableSplicingPage() {
       <div className="pt-28 pb-20">
 
         {/* Hero */}
-        <div className="bg-gradient-to-b from-amber-900/20 to-transparent border-b border-slate-800/50 pb-16">
+        <div className="bg-gradient-to-b from-amber-900/20 to-transparent border-b border-[#e8e8e8]/50 pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3 py-1.5 rounded-full text-xs font-medium mb-5">
               Copper Cable Splicing
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#1f1f1f] mb-5 leading-tight">
               Copper Cable Splicing Contractors
             </h1>
-            <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+            <p className="text-lg text-[#555555] mb-8 leading-relaxed">
               Connect with certified copper cable splicing contractors across the United States. Whether you
               need buried cable repair, pedestal termination, 25-pair through 2400-pair splice work, or
               emergency telephone line restoration — SpliceList has verified splice crews ready to quote
@@ -80,21 +80,21 @@ export default function CopperCableSplicingPage() {
 
           {/* What is copper cable splicing */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">What Is Copper Cable Splicing?</h2>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">What Is Copper Cable Splicing?</h2>
+            <p className="text-[#555555] leading-relaxed mb-4">
               Copper cable splicing is the process of permanently joining multi-pair copper telecommunications
               cables using a combination of individual wire splices, insulation displacement connectors (IDCs),
               and weatherproof closure systems. Unlike fiber splicing — which joins glass strands using heat —
               copper splicing involves mechanically connecting individual copper pairs with precisely matched
               wire connectors and protecting the joint with a pressurized or gel-filled enclosure.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <p className="text-[#555555] leading-relaxed mb-4">
               Copper cable plant remains a significant part of the telecommunications infrastructure across
               the United States. Despite widespread fiber deployment, millions of premises are still served
               via copper pairs that originate from central offices and remote terminals, traveling through
               buried cable, aerial strand, and pedestals to reach homes and businesses.
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-[#555555] leading-relaxed">
               Copper splice work requires intimate knowledge of pair identification, cable color codes,
               bonding and grounding standards, and pressurization systems that protect the cable from
               moisture intrusion. A poor copper splice is one of the leading causes of telephone service
@@ -105,7 +105,7 @@ export default function CopperCableSplicingPage() {
 
           {/* Cable types and environments */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6">Copper Cable Types and Work Environments</h2>
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-6">Copper Cable Types and Work Environments</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 {
@@ -133,12 +133,12 @@ export default function CopperCableSplicingPage() {
               ].map((item) => (
                 <div
                   key={item.type}
-                  className={`bg-[#0f172a] border border-${item.color}-500/20 rounded-xl p-5`}
+                  className={`bg-white border border-${item.color}-500/20 rounded-xl p-5`}
                 >
                   <h3 className={`text-${item.color}-400 font-bold text-lg mb-4`}>{item.type}</h3>
                   <ul className="space-y-2">
                     {item.points.map((p) => (
-                      <li key={p} className="text-slate-400 text-sm flex items-start gap-2">
+                      <li key={p} className="text-[#555555] text-sm flex items-start gap-2">
                         <span className={`text-${item.color}-400 mt-0.5`}>&#8594;</span> {p}
                       </li>
                     ))}
@@ -150,8 +150,8 @@ export default function CopperCableSplicingPage() {
 
           {/* Common Services */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-5">Common Copper Splicing Services</h2>
-            <p className="text-slate-400 leading-relaxed mb-5">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-5">Common Copper Splicing Services</h2>
+            <p className="text-[#555555] leading-relaxed mb-5">
               Copper splice contractors handle the full range of outside plant work on existing telephone
               cable infrastructure — from single-pair pair-gain assignments to large-count cable breaks
               involving hundreds of pairs. The following are the most frequently requested copper splicing
@@ -171,7 +171,7 @@ export default function CopperCableSplicingPage() {
               ].map((s) => (
                 <div
                   key={s}
-                  className="bg-[#0f172a] border border-slate-800 rounded-lg px-4 py-3 text-slate-300 text-sm"
+                  className="bg-white border border-[#e8e8e8] rounded-lg px-4 py-3 text-[#555555] text-sm"
                 >
                   {s}
                 </div>
@@ -181,10 +181,10 @@ export default function CopperCableSplicingPage() {
 
           {/* When to hire */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">
               When Do You Need a Copper Splicing Contractor?
             </h2>
-            <p className="text-slate-400 leading-relaxed mb-5">
+            <p className="text-[#555555] leading-relaxed mb-5">
               Copper cable plant work is labor-intensive, requires specialized tools, and carries real risk
               of causing widespread service outages if done incorrectly. These are the most common
               situations where a professional copper splice crew is needed:
@@ -208,11 +208,11 @@ export default function CopperCableSplicingPage() {
                   desc: 'Extending service to a new development or adding capacity to an existing cable section may require a bridge splice or new cable splice point in the distribution plant — work that must be done without interrupting service on active pairs in the same cable.',
                 },
               ].map((item) => (
-                <li key={item.title} className="flex gap-4 bg-[#0f172a] border border-slate-800 rounded-xl p-4">
+                <li key={item.title} className="flex gap-4 bg-white border border-[#e8e8e8] rounded-xl p-4">
                   <span className="text-amber-400 mt-0.5 shrink-0">&#8594;</span>
                   <div>
-                    <div className="text-white font-semibold text-sm mb-1">{item.title}</div>
-                    <div className="text-slate-400 text-sm">{item.desc}</div>
+                    <div className="text-[#1f1f1f] font-semibold text-sm mb-1">{item.title}</div>
+                    <div className="text-[#555555] text-sm">{item.desc}</div>
                   </div>
                 </li>
               ))}
@@ -221,10 +221,10 @@ export default function CopperCableSplicingPage() {
 
           {/* What to look for */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">
               What to Look for in a Copper Splicing Contractor
             </h2>
-            <p className="text-slate-400 leading-relaxed mb-5">
+            <p className="text-[#555555] leading-relaxed mb-5">
               Copper splicing is a trade skill that takes years to develop. A competent copper splicer
               knows pair colors by reflex, can work in a manhole in the rain, and understands how a
               bad splice in a 600-pair cable affects 60 customers. Here is what to verify:
@@ -254,12 +254,12 @@ export default function CopperCableSplicingPage() {
               ].map((item) => (
                 <li
                   key={item.title}
-                  className="flex gap-4 bg-[#0f172a] border border-slate-800 rounded-xl p-4"
+                  className="flex gap-4 bg-white border border-[#e8e8e8] rounded-xl p-4"
                 >
                   <span className="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
                   <div>
-                    <div className="text-white font-semibold text-sm mb-1">{item.title}</div>
-                    <div className="text-slate-400 text-sm">{item.desc}</div>
+                    <div className="text-[#1f1f1f] font-semibold text-sm mb-1">{item.title}</div>
+                    <div className="text-[#555555] text-sm">{item.desc}</div>
                   </div>
                 </li>
               ))}
@@ -268,21 +268,21 @@ export default function CopperCableSplicingPage() {
 
           {/* Copper vs fiber */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Copper vs. Fiber: When to Repair vs. Replace</h2>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">Copper vs. Fiber: When to Repair vs. Replace</h2>
+            <p className="text-[#555555] leading-relaxed mb-4">
               A common question when dealing with damaged or degraded copper cable plant is whether to
               repair the existing copper or replace it with fiber. The answer depends on the age of the
               infrastructure, the bandwidth demands being placed on it, and the cost of trenching vs.
               splicing.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <p className="text-[#555555] leading-relaxed mb-4">
               In many cases — particularly for a single cable break in otherwise healthy plant — copper
               repair is the right call. A skilled splice crew can restore service quickly and at a fraction
               of the cost of fiber replacement. In cases where the cable is chronically wet, heavily
               corroded, or being upgraded for broadband delivery, fiber replacement makes more economic
               sense over a 10–20 year horizon.
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-[#555555] leading-relaxed">
               SpliceList contractors can advise on both options. Many experienced OSP crews work in both
               copper and fiber and can give you a realistic assessment of the existing cable condition and
               what the most cost-effective path forward looks like.
@@ -291,7 +291,7 @@ export default function CopperCableSplicingPage() {
 
           {/* FAQs */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-6">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {[
                 {
@@ -315,9 +315,9 @@ export default function CopperCableSplicingPage() {
                   a: 'Many modern OSP crews are cross-trained in both copper and fiber, since mixed copper/fiber cable plants are common in FTTN (fiber to the node) architectures. However, fiber splicing requires different tools — a fusion splicer and OTDR — that not all copper contractors own. Always confirm that your contractor has the specific equipment for the cable type you need spliced.',
                 },
               ].map((faq) => (
-                <div key={faq.q} className="bg-[#0f172a] border border-slate-800 rounded-xl p-5">
-                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p>
+                <div key={faq.q} className="bg-white border border-[#e8e8e8] rounded-xl p-5">
+                  <h3 className="text-[#1f1f1f] font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-[#555555] text-sm leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -325,10 +325,10 @@ export default function CopperCableSplicingPage() {
 
           {/* CTA */}
           <section className="bg-gradient-to-r from-amber-900/20 to-[#f59e0b]/10 border border-amber-500/20 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-3">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-3">
               Need a Copper Splice Crew for Your Project?
             </h2>
-            <p className="text-slate-400 mb-6 max-w-lg mx-auto">
+            <p className="text-[#555555] mb-6 max-w-lg mx-auto">
               Search SpliceList for verified copper cable splicing contractors in your area. Filter by
               service type, emergency availability, and location.
             </p>
@@ -341,24 +341,24 @@ export default function CopperCableSplicingPage() {
           </section>
 
           {/* Internal links */}
-          <section className="border-t border-slate-800 pt-10">
-            <h2 className="text-xl font-bold text-white mb-5">Related Splicing Services</h2>
+          <section className="border-t border-[#e8e8e8] pt-10">
+            <h2 className="text-xl font-bold text-[#1f1f1f] mb-5">Related Splicing Services</h2>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/fiber-optic-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:border-emerald-500/40 hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:border-emerald-500/40 hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Fiber Optic Splicing &#8594;
               </Link>
               <Link
                 href="/telecom-cable-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:border-blue-500/40 hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:border-blue-500/40 hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Telecom Cable Splicing &#8594;
               </Link>
               <Link
                 href="/search"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:border-amber-500/40 hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:border-amber-500/40 hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Search All Contractors &#8594;
               </Link>

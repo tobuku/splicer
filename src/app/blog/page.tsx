@@ -68,24 +68,24 @@ export default function BlogPage() {
     <div className="pt-28 pb-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Cable Splicing Resources &amp; Guides</h1>
-          <p className="text-slate-400 text-lg">Industry knowledge for contractors, project owners, and telecom engineers.</p>
+          <h1 className="text-4xl font-bold text-[#1f1f1f] mb-4">Cable Splicing Resources &amp; Guides</h1>
+          <p className="text-[#555555] text-lg">Industry knowledge for contractors, project owners, and telecom engineers.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group bg-[#0f172a] border border-slate-800 hover:border-slate-600 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              className="group bg-white border border-[#e8e8e8] hover:border-[#e0e0e0] rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold border ${post.categoryColor} mb-4 w-fit`}>
                 {post.category}
               </span>
-              <h2 className="text-white font-bold text-lg leading-snug mb-3 group-hover:text-[#0ea5e9] transition-colors flex-1">
+              <h2 className="text-[#1f1f1f] font-bold text-lg leading-snug mb-3 group-hover:text-[#0b5cff] transition-colors flex-1">
                 {post.title}
               </h2>
-              <p className="text-slate-400 text-sm leading-relaxed mb-5">{post.excerpt}</p>
-              <div className="flex items-center justify-between text-xs text-slate-600">
+              <p className="text-[#555555] text-sm leading-relaxed mb-5">{post.excerpt}</p>
+              <div className="flex items-center justify-between text-xs text-[#777777]">
                 <span>{post.date}</span>
                 <span>{post.readTime}</span>
               </div>

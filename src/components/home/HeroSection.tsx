@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger)
 const STATS = [
   { value: 1400, suffix: '+', label: 'Contractors' },
   { value: 48, suffix: '', label: 'States' },
-  { value: 24, suffix: '/7', label: 'Emergency' },
   { value: 100, suffix: '%', label: 'Certified' },
 ]
 
@@ -166,9 +165,9 @@ export default function HeroSection() {
   }
 
   return (
-    <div ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+    <div ref={heroRef} className="relative flex items-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#0a0f1e]">
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg, #1a1a3e 0%, #1e3a8a 50%, #2d3a8c 100%)' }}>
         {/* Animated SVG wire pattern */}
         <svg
           ref={svgRef}
@@ -186,10 +185,10 @@ export default function HeroSection() {
                 key={i}
                 className="wire-line"
                 d={`M-20,${yPx} C360,${yPx + wave} 720,${yPx - wave} 1080,${yPx + wave} L1460,${yPx}`}
-                stroke="#0ea5e9"
+                stroke="#0b5cff"
                 strokeWidth={i % 3 === 0 ? '1.5' : '1'}
                 fill="none"
-                opacity={i % 3 === 0 ? '0.14' : '0.08'}
+                opacity={i % 3 === 0 ? '0.35' : '0.20'}
                 strokeLinecap="round"
               />
             )
@@ -197,29 +196,29 @@ export default function HeroSection() {
         </svg>
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1e]/60 via-transparent to-[#0a0f1e]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1e]/80 via-transparent to-[#0a0f1e]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a3e]/70 via-transparent to-[#1a1a3e]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a3e]/80 via-transparent to-transparent" />
 
         {/* Ambient glow orbs — animated via ref */}
         <div
           ref={orb1Ref}
           className="absolute top-1/4 left-1/4 w-[32rem] h-[32rem] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.10) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(11,92,255,0.18) 0%, transparent 70%)' }}
         />
         <div
           ref={orb2Ref}
           className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.10) 0%, transparent 70%)' }}
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* ── Left column ──────────────────────────────────────────────── */}
           <div className="hero-left max-w-2xl">
             {/* Badge */}
-            <div className="hero-badge inline-flex items-center gap-2 bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 text-[#0ea5e9] px-4 py-2 rounded-full text-sm font-medium mb-7">
+            <div className="hero-badge inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white px-4 py-2 rounded-full text-sm font-medium mb-7">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
@@ -229,17 +228,17 @@ export default function HeroSection() {
 
             {/* H1 */}
             <h1 className="font-bold leading-tight mb-6">
-              <span className="hero-line-1 block text-4xl sm:text-5xl lg:text-6xl text-slate-300 mb-1">
+              <span className="hero-line-1 block text-4xl sm:text-5xl lg:text-6xl text-white/90 mb-1">
                 The National Directory for
               </span>
               <span className="hero-line-2 block text-4xl sm:text-5xl lg:text-6xl text-white">
-                <span className="relative inline-block text-[#0ea5e9]">
+                <span className="relative inline-block text-[#0b5cff]">
                   Cable
                   <span
                     className="absolute left-0 w-full"
                     style={{
                       height: '3px',
-                      background: 'linear-gradient(90deg, #0ea5e9, #38bdf8)',
+                      background: 'linear-gradient(90deg, #0b5cff, #38bdf8)',
                       borderRadius: '2px',
                       bottom: '-4px',
                     }}
@@ -250,31 +249,31 @@ export default function HeroSection() {
             </h1>
 
             {/* Subheadline */}
-            <p className="hero-sub text-lg sm:text-xl text-slate-400 leading-relaxed mb-8 max-w-2xl">
+            <p className="hero-sub text-lg sm:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
               Connect with vetted telecom, fiber optic, and copper cable splicing crews for commercial, residential, and emergency projects across the United States.
             </p>
 
             {/* Search label */}
-            <p className="hero-search-label text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2 ml-1">
+            <p className="hero-search-label text-xs font-semibold uppercase tracking-widest text-white/60 mb-2 ml-1">
               Find splice crews near you
             </p>
 
             {/* Search bar */}
             <form
               onSubmit={handleSearch}
-              className="hero-search bg-[#0f172a] border border-slate-700/60 rounded-lg flex flex-col sm:flex-row gap-0 mb-6 max-w-2xl shadow-2xl overflow-hidden"
+              className="hero-search bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex flex-col sm:flex-row gap-0 mb-6 max-w-2xl shadow-2xl overflow-hidden"
             >
               <input
                 type="text"
                 placeholder="City or state..."
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                className="flex-1 bg-transparent px-5 py-4 text-white placeholder-slate-600 outline-none text-sm border-b sm:border-b-0 sm:border-r border-slate-700/60"
+                className="flex-1 bg-transparent px-5 py-4 text-white placeholder-white/50 outline-none text-sm border-b sm:border-b-0 sm:border-r border-white/20"
               />
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="bg-[#0f172a] border-0 text-slate-400 px-5 py-4 text-sm outline-none cursor-pointer border-b sm:border-b-0 sm:border-r border-slate-700/60 min-w-[160px]"
+                className="bg-transparent border-0 text-white/80 px-5 py-4 text-sm outline-none cursor-pointer border-b sm:border-b-0 sm:border-r border-white/20 min-w-[160px]"
               >
                 <option value="">All Services</option>
                 <option value="FIBER">Fiber Optic</option>
@@ -283,19 +282,16 @@ export default function HeroSection() {
               </select>
               <button
                 type="submit"
-                className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8 py-4 font-semibold text-sm transition-colors duration-200 whitespace-nowrap"
+                className="bg-[#0b5cff] hover:bg-[#0946cc] text-white px-8 py-4 font-semibold text-sm transition-colors duration-200 whitespace-nowrap"
               >
                 Search
               </button>
             </form>
 
             {/* Secondary CTAs */}
-            <div className="hero-ctas flex flex-wrap gap-6 mb-16">
-              <Link href="/locations" className="text-slate-400 hover:text-slate-200 text-sm transition-colors">
+            <div className="hero-ctas flex flex-wrap gap-6 mb-8">
+              <Link href="/locations" className="text-white/70 hover:text-white text-sm transition-colors">
                 Browse by State →
-              </Link>
-              <Link href="/services/emergency-repair" className="text-amber-400 hover:text-amber-300 text-sm font-medium transition-colors">
-                ⚡ Emergency Repair →
               </Link>
             </div>
 
@@ -303,12 +299,12 @@ export default function HeroSection() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {STATS.map((stat, i) => (
                 <div key={stat.label} className="hero-stat-wrap">
-                  <div className="text-2xl sm:text-3xl font-bold text-[#0ea5e9] tabular-nums">
+                  <div className="text-2xl sm:text-3xl font-bold text-white tabular-nums">
                     <span ref={(el) => { statRefs.current[i] = el }}>
                       0{stat.suffix}
                     </span>
                   </div>
-                  <div className="text-slate-400 text-sm mt-0.5">{stat.label}</div>
+                  <div className="text-white/70 text-sm mt-0.5">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -316,9 +312,9 @@ export default function HeroSection() {
 
           {/* ── Right column — photo collage ─────────────────────────────── */}
           <div className="hero-photos hidden lg:grid grid-cols-2 gap-3">
-            <div className="hero-photo-item col-span-2 rounded-xl overflow-hidden aspect-video shadow-2xl ring-1 ring-white/5">
+            <div className="hero-photo-item col-span-2 rounded-xl overflow-hidden aspect-video shadow-2xl ring-1 ring-[#e8e8e8]">
               <Image
-                src="/images/fiber/IMG_0794.jpg"
+                src="/images/fiber/IMG_5010.jpg"
                 alt="Fiber splice tray with completed splices"
                 width={560}
                 height={315}
@@ -326,7 +322,7 @@ export default function HeroSection() {
                 priority
               />
             </div>
-            <div className="hero-photo-item rounded-xl overflow-hidden shadow-xl ring-1 ring-white/5" style={{ aspectRatio: '4/3' }}>
+            <div className="hero-photo-item rounded-xl overflow-hidden shadow-xl ring-1 ring-[#e8e8e8]" style={{ aspectRatio: '4/3' }}>
               <Image
                 src="/images/copper/IMG_0818.jpg"
                 alt="Copper cable splice"
@@ -335,7 +331,7 @@ export default function HeroSection() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="hero-photo-item rounded-xl overflow-hidden shadow-xl ring-1 ring-white/5" style={{ aspectRatio: '4/3' }}>
+            <div className="hero-photo-item rounded-xl overflow-hidden shadow-xl ring-1 ring-[#e8e8e8]" style={{ aspectRatio: '4/3' }}>
               <Image
                 src="/images/equipment/IMG_5898.jpg"
                 alt="Fusion splicer equipment"

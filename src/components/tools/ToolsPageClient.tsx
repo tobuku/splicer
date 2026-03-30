@@ -34,8 +34,8 @@ export default function ToolsPageClient({ categories, tools }: Props) {
           onClick={() => setActive('all')}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
             active === 'all'
-              ? 'bg-[#0ea5e9] text-white'
-              : 'bg-[#0f172a] border border-slate-700 text-slate-400 hover:border-slate-500 hover:text-white'
+              ? 'bg-[#0b5cff] text-white'
+              : 'bg-white border border-[#e8e8e8] text-[#555555] hover:border-gray-400 hover:text-[#1f1f1f]'
           }`}
         >
           All Equipment
@@ -46,8 +46,8 @@ export default function ToolsPageClient({ categories, tools }: Props) {
             onClick={() => setActive(cat.id)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               active === cat.id
-                ? 'bg-[#0ea5e9] text-white'
-                : 'bg-[#0f172a] border border-slate-700 text-slate-400 hover:border-slate-500 hover:text-white'
+                ? 'bg-[#0b5cff] text-white'
+                : 'bg-white border border-[#e8e8e8] text-[#555555] hover:border-gray-400 hover:text-[#1f1f1f]'
             }`}
           >
             {cat.label}
@@ -63,7 +63,7 @@ export default function ToolsPageClient({ categories, tools }: Props) {
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-16 text-slate-500">No tools in this category yet.</div>
+        <div className="text-center py-16 text-[#777777]">No tools in this category yet.</div>
       )}
     </div>
   )

@@ -52,8 +52,8 @@ export default function LeadForm({ listingId, listingName }: Props) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-white font-semibold mb-1">Quote Request Sent</h3>
-        <p className="text-slate-400 text-sm">{listingName} will be in touch shortly.</p>
+        <h3 className="text-[#1f1f1f] font-semibold mb-1">Quote Request Sent</h3>
+        <p className="text-[#555555] text-sm">{listingName} will be in touch shortly.</p>
       </div>
     )
   }
@@ -64,7 +64,7 @@ export default function LeadForm({ listingId, listingName }: Props) {
         <input
           {...register('name')}
           placeholder="Your Name *"
-          className="w-full bg-[#1e293b] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none focus:border-[#0ea5e9] transition-colors"
+          className="w-full bg-[#f0f0f0] border border-[#e8e8e8] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none focus:border-[#0b5cff] transition-colors"
         />
         {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
       </div>
@@ -73,7 +73,7 @@ export default function LeadForm({ listingId, listingName }: Props) {
           {...register('email')}
           type="email"
           placeholder="Email Address *"
-          className="w-full bg-[#1e293b] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none focus:border-[#0ea5e9] transition-colors"
+          className="w-full bg-[#f0f0f0] border border-[#e8e8e8] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none focus:border-[#0b5cff] transition-colors"
         />
         {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
       </div>
@@ -82,7 +82,7 @@ export default function LeadForm({ listingId, listingName }: Props) {
           {...register('phone')}
           type="tel"
           placeholder="Phone Number"
-          className="w-full bg-[#1e293b] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none focus:border-[#0ea5e9] transition-colors"
+          className="w-full bg-[#f0f0f0] border border-[#e8e8e8] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none focus:border-[#0b5cff] transition-colors"
         />
       </div>
       <div>
@@ -90,18 +90,18 @@ export default function LeadForm({ listingId, listingName }: Props) {
           {...register('message')}
           placeholder="Describe your project..."
           rows={4}
-          className="w-full bg-[#1e293b] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none focus:border-[#0ea5e9] transition-colors resize-none"
+          className="w-full bg-[#f0f0f0] border border-[#e8e8e8] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none focus:border-[#0b5cff] transition-colors resize-none"
         />
       </div>
       {serverError && <p className="text-red-400 text-xs">{serverError}</p>}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] disabled:opacity-60 text-white py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-[#0ea5e9]/20"
+        className="w-full bg-[#0b5cff] hover:bg-[#0946cc] disabled:opacity-60 text-white py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-[#0b5cff]/20"
       >
         {isSubmitting ? 'Sending...' : 'Request a Free Quote'}
       </button>
-      <p className="text-slate-600 text-xs text-center">Your information is never shared or sold.</p>
+      <p className="text-[#777777] text-xs text-center">Your information is never shared or sold.</p>
     </form>
   )
 }

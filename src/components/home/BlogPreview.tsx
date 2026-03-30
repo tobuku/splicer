@@ -43,30 +43,21 @@ export default function BlogPreview() {
     const ctx = gsap.context(() => {
       gsap.from('.blog-heading', {
         opacity: 0,
-        y: 30,
-        duration: 0.7,
+        y: 20,
+        duration: 0.6,
         ease: 'power3.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 82%' },
-      })
-      gsap.from('.blog-card', {
-        opacity: 0,
-        y: 60,
-        scale: 0.93,
-        stagger: 0.15,
-        duration: 0.9,
-        ease: 'power4.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 78%' },
+        scrollTrigger: { trigger: ref.current, start: 'top 92%' },
       })
     }, ref)
     return () => ctx.revert()
   }, [])
 
   return (
-    <section ref={ref} className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="blog-heading flex items-center justify-between mb-12">
         <div>
-          <h2 className="text-3xl font-bold text-white mb-2">Cable Splicing Resources</h2>
-          <p className="text-slate-400">Industry knowledge for contractors and project owners.</p>
+          <h2 className="text-3xl font-bold text-[#1f1f1f] mb-2">Cable Splicing Resources</h2>
+          <p className="text-[#555555]">Industry knowledge for contractors and project owners.</p>
         </div>
         <Link
           href="/blog"
@@ -81,18 +72,18 @@ export default function BlogPreview() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="blog-card group bg-[#0f172a] border border-slate-800 rounded-2xl p-6 hover:border-slate-600 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+            className="blog-card group bg-white border border-[#e8e8e8] rounded-2xl p-6 hover:border-[#e0e0e0] transition-all duration-300 hover:-translate-y-1 flex flex-col"
           >
             <span
               className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${post.categoryColor} mb-4 w-fit`}
             >
               {post.category}
             </span>
-            <h3 className="text-white font-bold text-lg leading-snug mb-3 group-hover:text-[var(--blue)] transition-colors flex-1">
+            <h3 className="text-[#1f1f1f] font-bold text-lg leading-snug mb-3 group-hover:text-[var(--blue)] transition-colors flex-1">
               {post.title}
             </h3>
-            <p className="text-slate-400 text-sm leading-relaxed mb-5">{post.excerpt}</p>
-            <div className="text-slate-500 text-xs">{post.readTime}</div>
+            <p className="text-[#555555] text-sm leading-relaxed mb-5">{post.excerpt}</p>
+            <div className="text-[#777777] text-xs">{post.readTime}</div>
           </Link>
         ))}
       </div>

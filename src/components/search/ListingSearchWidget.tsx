@@ -25,11 +25,11 @@ export default function ListingSearchWidget({ defaultCategory = '' }: Props) {
         placeholder="Enter city or state..."
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        className="flex-1 bg-[#0f172a] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none focus:border-[#0ea5e9] transition-colors"
+        className="flex-1 bg-white border border-[#e8e8e8] rounded-xl px-4 py-3 text-[#1f1f1f] placeholder-gray-400 text-sm outline-none focus:border-[#0b5cff] transition-colors"
       />
       <button
         type="submit"
-        className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-6 py-3 rounded-xl text-sm font-semibold transition-colors whitespace-nowrap"
+        className="bg-[#0b5cff] hover:bg-[#0946cc] text-white px-6 py-3 rounded-xl text-sm font-semibold transition-colors whitespace-nowrap"
       >
         Find Contractors
       </button>

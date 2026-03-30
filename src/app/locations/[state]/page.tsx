@@ -36,37 +36,37 @@ export default async function StatePage({ params }: Props) {
       <SchemaScript schema={schema} />
       <div className="pt-28 pb-20 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8">
-            <Link href="/" className="hover:text-slate-300">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#777777] mb-8">
+            <Link href="/" className="hover:text-[#555555]">Home</Link>
             <span>/</span>
-            <Link href="/locations" className="hover:text-slate-300">Locations</Link>
+            <Link href="/locations" className="hover:text-[#555555]">Locations</Link>
             <span>/</span>
-            <span className="text-slate-300">{stateName}</span>
+            <span className="text-[#555555]">{stateName}</span>
           </nav>
 
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="text-4xl font-bold text-[#1f1f1f] mb-4">
             Cable Splicing Contractors in {stateName}
           </h1>
-          <p className="text-slate-400 text-lg mb-8">
+          <p className="text-[#555555] text-lg mb-8">
             Browse verified telecom, fiber optic, and copper cable splicing contractors throughout {stateName}.
           </p>
 
           <Link
             href={`/search?state=${stateSlug}`}
-            className="inline-flex items-center gap-2 bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all mb-12"
+            className="inline-flex items-center gap-2 bg-[#0b5cff] hover:bg-[#0946cc] text-[#1f1f1f] px-6 py-3 rounded-xl text-sm font-semibold transition-all mb-12"
           >
             View All Contractors in {stateName}
           </Link>
 
           {cities.length > 0 && (
             <>
-              <h2 className="text-2xl font-bold text-white mb-6">Browse by City</h2>
+              <h2 className="text-2xl font-bold text-[#1f1f1f] mb-6">Browse by City</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-12">
                 {cities.map((city) => (
                   <Link
                     key={`${city.city}-${city.state}`}
                     href={`/locations/${stateSlug}/${city.city.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="bg-[#0f172a] border border-slate-800 hover:border-[#0ea5e9]/40 hover:text-[#0ea5e9] text-slate-300 rounded-xl px-4 py-3 text-sm font-medium transition-all text-center"
+                    className="bg-white border border-[#e8e8e8] hover:border-[#0b5cff]/40 hover:text-[#0b5cff] text-[#555555] rounded-xl px-4 py-3 text-sm font-medium transition-all text-center"
                   >
                     {city.city}
                   </Link>
@@ -75,7 +75,7 @@ export default async function StatePage({ params }: Props) {
             </>
           )}
 
-          <h2 className="text-xl font-bold text-white mb-4">Services in {stateName}</h2>
+          <h2 className="text-xl font-bold text-[#1f1f1f] mb-4">Services in {stateName}</h2>
           <div className="flex flex-wrap gap-3">
             {[
               { label: 'Fiber Optic Splicing', cat: 'FIBER' },
@@ -85,7 +85,7 @@ export default async function StatePage({ params }: Props) {
               <Link
                 key={item.cat}
                 href={`/search?state=${stateSlug}&category=${item.cat}`}
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-[#1f1f1f] hover:border-gray-400 px-5 py-2.5 rounded-xl text-sm font-medium transition-all"
               >
                 {item.label} in {stateName} &rarr;
               </Link>

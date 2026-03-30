@@ -18,7 +18,7 @@ const badgeColors: Record<string, string> = {
   'Best Value':        'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
   'Top Rated':         'bg-amber-500/10 text-amber-400 border-amber-500/30',
   'Pro Choice':        'bg-purple-500/10 text-purple-400 border-purple-500/30',
-  'Essential':         'bg-slate-500/10 text-slate-300 border-slate-500/30',
+  'Essential':         'bg-slate-500/10 text-[#555555] border-slate-500/30',
   'Compact':           'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
   'Required':          'bg-red-500/10 text-red-400 border-red-500/30',
 }
@@ -27,10 +27,10 @@ interface Props { tool: Tool }
 
 export default function ToolCard({ tool }: Props) {
   return (
-    <div className={`tool-card relative flex flex-col bg-[#0f172a] border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+    <div className={`tool-card relative flex flex-col bg-white border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
       tool.featured
-        ? 'border-[#0ea5e9]/30 hover:border-[#0ea5e9]/60 hover:shadow-[#0ea5e9]/10'
-        : 'border-slate-800 hover:border-slate-600'
+        ? 'border-[#0b5cff]/30 hover:border-[#0b5cff]/60 hover:shadow-[#0b5cff]/10'
+        : 'border-[#e8e8e8] hover:border-[#e0e0e0]'
     }`}>
       {/* Photo */}
       {tool.image && (
@@ -48,32 +48,32 @@ export default function ToolCard({ tool }: Props) {
 
       {/* Badge */}
       {tool.badge && (
-        <span className={`absolute top-4 right-4 text-xs font-semibold px-2 py-1 rounded-full border ${badgeColors[tool.badge] || 'bg-slate-500/10 text-slate-400 border-slate-500/30'}`}>
+        <span className={`absolute top-4 right-4 text-xs font-semibold px-2 py-1 rounded-full border ${badgeColors[tool.badge] || 'bg-slate-500/10 text-[#555555] border-slate-500/30'}`}>
           {tool.badge}
         </span>
       )}
 
       {/* Brand */}
-      <div className="text-[#0ea5e9] text-xs font-semibold uppercase tracking-wider mb-1">
+      <div className="text-[#0b5cff] text-xs font-semibold uppercase tracking-wider mb-1">
         {tool.brand}
       </div>
 
       {/* Name */}
-      <h3 className="text-white font-bold text-base leading-snug mb-3 pr-16">
+      <h3 className="text-[#1f1f1f] font-bold text-base leading-snug mb-3 pr-16">
         {tool.name}
       </h3>
 
       {/* Description */}
-      <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-4">
+      <p className="text-[#555555] text-sm leading-relaxed flex-1 mb-4">
         {tool.description}
       </p>
 
       {/* Price range */}
       <div className="flex items-center gap-2 mb-4">
-        <span className={`font-bold text-sm ${priceColors[tool.priceRange] || 'text-slate-400'}`}>
+        <span className={`font-bold text-sm ${priceColors[tool.priceRange] || 'text-[#555555]'}`}>
           {tool.priceRange}
         </span>
-        <span className="text-slate-600 text-xs">
+        <span className="text-[#777777] text-xs">
           {priceLabels[tool.priceRange] || ''}
         </span>
       </div>

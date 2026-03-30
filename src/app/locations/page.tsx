@@ -39,15 +39,15 @@ export default function LocationsPage() {
     <div className="pt-28 pb-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Cable Splicing Contractors by State</h1>
-          <p className="text-slate-400 text-lg">Find certified telecom, fiber optic, and copper cable splicing contractors in your state.</p>
+          <h1 className="text-4xl font-bold text-[#1f1f1f] mb-4">Cable Splicing Contractors by State</h1>
+          <p className="text-[#555555] text-lg">Find certified telecom, fiber optic, and copper cable splicing contractors in your state.</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
           {states.map((state) => (
             <Link
               key={state.slug}
               href={`/locations/${state.slug}`}
-              className="bg-[#0f172a] border border-slate-800 hover:border-[#0ea5e9]/40 hover:text-[#0ea5e9] text-slate-300 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 text-center"
+              className="bg-white border border-[#e8e8e8] hover:border-[#0b5cff]/40 hover:text-[#0b5cff] text-[#555555] rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 text-center"
             >
               {state.name}
             </Link>

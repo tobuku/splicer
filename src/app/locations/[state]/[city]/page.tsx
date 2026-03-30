@@ -56,21 +56,21 @@ export default async function CityPage({ params }: Props) {
       <SchemaScript schema={schema} />
       <div className="pt-28 pb-20 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8 flex-wrap">
-            <Link href="/" className="hover:text-slate-300">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#777777] mb-8 flex-wrap">
+            <Link href="/" className="hover:text-[#555555]">Home</Link>
             <span>/</span>
-            <Link href="/locations" className="hover:text-slate-300">Locations</Link>
+            <Link href="/locations" className="hover:text-[#555555]">Locations</Link>
             <span>/</span>
-            <Link href={`/locations/${stateSlug}`} className="hover:text-slate-300">{stateName}</Link>
+            <Link href={`/locations/${stateSlug}`} className="hover:text-[#555555]">{stateName}</Link>
             <span>/</span>
-            <span className="text-slate-300">{cityName}</span>
+            <span className="text-[#555555]">{cityName}</span>
           </nav>
 
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#1f1f1f] mb-4 leading-tight">
             Fiber Optic &amp; Cable Splicing Contractors in {cityName}, {stateName}
           </h1>
 
-          <p className="text-slate-400 text-lg leading-relaxed mb-8">
+          <p className="text-[#555555] text-lg leading-relaxed mb-8">
             SpliceList connects project owners, carriers, and general contractors with certified cable splicing crews serving {cityName} and the surrounding {stateName} metro area.
           </p>
 
@@ -78,9 +78,9 @@ export default async function CityPage({ params }: Props) {
             <ListingSearchWidget defaultCategory="" />
           </div>
 
-          <div className="space-y-8 text-slate-400 leading-relaxed">
+          <div className="space-y-8 text-[#555555] leading-relaxed">
             <section>
-              <h2 className="text-2xl font-bold text-white mb-3">
+              <h2 className="text-2xl font-bold text-[#1f1f1f] mb-3">
                 Cable Splicing Services in {cityName}
               </h2>
               <p>
@@ -92,7 +92,7 @@ export default async function CityPage({ params }: Props) {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-3">
+              <h2 className="text-2xl font-bold text-[#1f1f1f] mb-3">
                 Fiber Optic Splicing in {cityName}, {stateName}
               </h2>
               <p>
@@ -101,7 +101,7 @@ export default async function CityPage({ params }: Props) {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-3">
+              <h2 className="text-2xl font-bold text-[#1f1f1f] mb-3">
                 Copper &amp; Telecom Splicing in {cityName}
               </h2>
               <p>
@@ -110,37 +110,37 @@ export default async function CityPage({ params }: Props) {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-3">Emergency Cable Repair in {cityName}</h2>
+              <h2 className="text-2xl font-bold text-[#1f1f1f] mb-3">Emergency Cable Repair in {cityName}</h2>
               <p>
                 Cable cuts, storm damage, and excavation strikes require fast response. Several contractors in the {cityName} area offer 24/7 emergency splicing services with rapid mobilization. These crews carry portable fusion splicers, OTDR equipment, and closure hardware to restore service on-site without waiting for a material delivery.
               </p>
             </section>
           </div>
 
-          <div className="mt-12 border-t border-slate-800 pt-8">
-            <h3 className="text-white font-semibold mb-4">Related Pages</h3>
+          <div className="mt-12 border-t border-[#e8e8e8] pt-8">
+            <h3 className="text-[#1f1f1f] font-semibold mb-4">Related Pages</h3>
             <div className="flex flex-wrap gap-3">
               <Link
                 href={`/locations/${stateSlug}`}
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-[#0ea5e9] px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-[#0b5cff] px-4 py-2 rounded-lg text-sm transition-all"
               >
                 All Contractors in {stateName}
               </Link>
               <Link
                 href="/fiber-optic-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Fiber Optic Splicing
               </Link>
               <Link
                 href="/telecom-cable-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Telecom Cable Splicing
               </Link>
               <Link
                 href="/copper-cable-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Copper Cable Splicing
               </Link>

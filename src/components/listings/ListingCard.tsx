@@ -65,7 +65,7 @@ function ReportButton({ listingId }: { listingId: string }) {
 
   if (status === 'done') {
     return (
-      <span className="text-slate-600 text-[11px]">Reported — thank you</span>
+      <span className="text-[#777777] text-[11px]">Reported — thank you</span>
     )
   }
 
@@ -75,7 +75,7 @@ function ReportButton({ listingId }: { listingId: string }) {
         <button
           type="button"
           onClick={handleToggle}
-          className="text-slate-600 hover:text-slate-400 text-[11px] underline underline-offset-2 transition-colors"
+          className="text-[#777777] hover:text-[#555555] text-[11px] underline underline-offset-2 transition-colors"
         >
           Report
         </button>
@@ -88,7 +88,7 @@ function ReportButton({ listingId }: { listingId: string }) {
           <select
             value={reason}
             onChange={e => setReason(e.target.value)}
-            className="bg-[#0a0f1e] border border-slate-700 text-slate-300 text-[11px] rounded-lg px-2 py-1 outline-none"
+            className="bg-white border border-[#e8e8e8] text-[#555555] text-[11px] rounded-lg px-2 py-1 outline-none"
           >
             {REPORT_REASONS.map(r => (
               <option key={r} value={r}>{r}</option>
@@ -97,14 +97,14 @@ function ReportButton({ listingId }: { listingId: string }) {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="text-[11px] bg-slate-700 hover:bg-slate-600 text-white px-2.5 py-1 rounded-lg transition-colors disabled:opacity-50"
+            className="text-[11px] bg-[#eeeeee] hover:bg-gray-300 text-[#1f1f1f] px-2.5 py-1 rounded-lg transition-colors disabled:opacity-50"
           >
             {status === 'submitting' ? 'Sending…' : 'Submit'}
           </button>
           <button
             type="button"
             onClick={handleToggle}
-            className="text-slate-600 hover:text-slate-400 text-[11px] transition-colors"
+            className="text-[#777777] hover:text-[#555555] text-[11px] transition-colors"
           >
             Cancel
           </button>
@@ -116,25 +116,25 @@ function ReportButton({ listingId }: { listingId: string }) {
 
 export default function ListingCard({ listing }: Props) {
   const primaryCategory = listing.category[0] ?? ''
-  const colorClass = categoryColors[primaryCategory] ?? 'text-slate-400 border-slate-500/30 bg-slate-500/10'
+  const colorClass = categoryColors[primaryCategory] ?? 'text-[#555555] border-slate-500/30 bg-slate-500/10'
 
   return (
-    <div className="relative group block bg-[#0f172a] border border-slate-800 hover:border-slate-600 rounded-2xl p-6 transition-all">
+    <div className="relative group block bg-white border border-[#e8e8e8] hover:border-[#e0e0e0] rounded-2xl p-6 transition-all">
       <Link href={`/contractors/${listing.slug}`} className="block">
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">
-          <h3 className="text-white font-semibold text-base leading-snug group-hover:text-[#0ea5e9] transition-colors">
+          <h3 className="text-[#1f1f1f] font-semibold text-base leading-snug group-hover:text-[#0b5cff] transition-colors">
             {listing.businessName}
           </h3>
           {listing.verified && (
-            <span className="shrink-0 text-[10px] font-semibold bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 text-[#0ea5e9] px-2 py-0.5 rounded-full">
+            <span className="shrink-0 text-[10px] font-semibold bg-[#0b5cff]/10 border border-[#0b5cff]/30 text-[#0b5cff] px-2 py-0.5 rounded-full">
               Verified
             </span>
           )}
         </div>
 
         {/* Location */}
-        <p className="text-slate-500 text-sm mb-4">
+        <p className="text-[#777777] text-sm mb-4">
           {listing.city}{listing.state ? `, ${listing.state}` : ''}
           {listing.yearsInBusiness ? ` · ${listing.yearsInBusiness} yrs` : ''}
         </p>
@@ -158,30 +158,30 @@ export default function ListingCard({ listing }: Props) {
 
         {/* Services preview */}
         {listing.services.length > 0 && (
-          <p className="text-slate-500 text-xs truncate mb-4">
+          <p className="text-[#777777] text-xs truncate mb-4">
             {listing.services.slice(0, 3).join(' · ')}
             {listing.services.length > 3 ? ` +${listing.services.length - 3} more` : ''}
           </p>
         )}
 
         {/* Footer */}
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-800">
+        <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#e8e8e8]">
           {listing.rating !== null ? (
             <div className="flex items-center gap-1.5">
               <span className="text-amber-400 text-xs font-bold">{listing.rating.toFixed(1)}</span>
-              <span className="text-slate-600 text-xs">({listing.reviewCount})</span>
+              <span className="text-[#777777] text-xs">({listing.reviewCount})</span>
             </div>
           ) : (
-            <span className="text-slate-600 text-xs">No reviews yet</span>
+            <span className="text-[#777777] text-xs">No reviews yet</span>
           )}
           {listing.phone && (
-            <span className="text-slate-500 text-xs">{listing.phone}</span>
+            <span className="text-[#777777] text-xs">{listing.phone}</span>
           )}
         </div>
       </Link>
 
       {/* Report button — outside the Link to avoid nested interactive elements */}
-      <div className="pt-3 mt-3 border-t border-slate-800/50">
+      <div className="pt-3 mt-3 border-t border-[#e8e8e8]/50">
         <ReportButton listingId={listing.id} />
       </div>
     </div>

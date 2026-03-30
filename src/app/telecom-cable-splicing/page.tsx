@@ -40,15 +40,15 @@ export default function TelecomCableSplicingPage() {
       <div className="pt-28 pb-20">
 
         {/* Hero */}
-        <div className="bg-gradient-to-b from-blue-900/20 to-transparent border-b border-slate-800/50 pb-16">
+        <div className="bg-gradient-to-b from-blue-900/20 to-transparent border-b border-[#e8e8e8]/50 pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
             <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-3 py-1.5 rounded-full text-xs font-medium mb-5">
               Telecom Cable Splicing
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#1f1f1f] mb-5 leading-tight">
               Telecom Cable Splicing Contractors
             </h1>
-            <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+            <p className="text-lg text-[#555555] mb-8 leading-relaxed">
               Connect with certified outside plant (OSP) telecom cable splicing contractors across the United
               States. Whether you need new cable plant construction, central office splicing, DSLAM
               connections, or emergency repair of a buried cable break — SpliceList has verified splice crews
@@ -63,21 +63,21 @@ export default function TelecomCableSplicingPage() {
 
           {/* What is telecom cable splicing */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">What Is Telecom Cable Splicing?</h2>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">What Is Telecom Cable Splicing?</h2>
+            <p className="text-[#555555] leading-relaxed mb-4">
               Telecom cable splicing is the process of joining telecommunications cables — which may carry
               copper pairs, fiber strands, or a combination — at splice points throughout the outside plant
               network. Unlike simple patching or connectorization, splicing creates a permanent, weatherproof
               joint designed to last decades in aerial, underground, or buried environments.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-4">
+            <p className="text-[#555555] leading-relaxed mb-4">
               OSP splice technicians work on the cable plant between the central office (CO) and the end
               customer — spanning aerial strand, underground conduit, direct-buried cable, pedestal
               terminations, and remote terminal enclosures. This work requires knowledge of network
               architecture, proper cable handling, and compliance with carrier-specific build standards such
               as Telcordia GR-20 and GR-765.
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-[#555555] leading-relaxed">
               Telecom splicing is distinct from structured cabling or data center work. OSP splice crews are
               trained for field conditions — trenches, manholes, aerial bucket work, and extreme weather —
               and understand the regulatory and safety requirements of working in the right-of-way alongside
@@ -87,7 +87,7 @@ export default function TelecomCableSplicingPage() {
 
           {/* OSP vs ISP */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6">OSP vs. ISP Splicing</h2>
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-6">OSP vs. ISP Splicing</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 {
@@ -115,12 +115,12 @@ export default function TelecomCableSplicingPage() {
               ].map((item) => (
                 <div
                   key={item.type}
-                  className={`bg-[#0f172a] border border-${item.color}-500/20 rounded-xl p-5`}
+                  className={`bg-white border border-${item.color}-500/20 rounded-xl p-5`}
                 >
                   <h3 className={`text-${item.color}-400 font-bold text-lg mb-4`}>{item.type}</h3>
                   <ul className="space-y-2">
                     {item.points.map((p) => (
-                      <li key={p} className="text-slate-400 text-sm flex items-start gap-2">
+                      <li key={p} className="text-[#555555] text-sm flex items-start gap-2">
                         <span className={`text-${item.color}-400 mt-0.5`}>&#8594;</span> {p}
                       </li>
                     ))}
@@ -132,8 +132,8 @@ export default function TelecomCableSplicingPage() {
 
           {/* Common Services */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-5">Common Telecom Splicing Services</h2>
-            <p className="text-slate-400 leading-relaxed mb-5">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-5">Common Telecom Splicing Services</h2>
+            <p className="text-[#555555] leading-relaxed mb-5">
               Telecom splice contractors handle the full range of outside plant and inside plant work that
               keeps carrier networks running. The following service categories represent the most frequently
               requested work booked through SpliceList:
@@ -152,7 +152,7 @@ export default function TelecomCableSplicingPage() {
               ].map((s) => (
                 <div
                   key={s}
-                  className="bg-[#0f172a] border border-slate-800 rounded-lg px-4 py-3 text-slate-300 text-sm"
+                  className="bg-white border border-[#e8e8e8] rounded-lg px-4 py-3 text-[#555555] text-sm"
                 >
                   {s}
                 </div>
@@ -162,10 +162,10 @@ export default function TelecomCableSplicingPage() {
 
           {/* When to hire */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">
               When Do You Need a Telecom Splicing Contractor?
             </h2>
-            <p className="text-slate-400 leading-relaxed mb-5">
+            <p className="text-[#555555] leading-relaxed mb-5">
               OSP splicing is one of the most specialized trades in telecommunications. Most organizations —
               including many carriers — rely on outside contractors for all or part of their splice work.
               Here are the most common situations:
@@ -189,11 +189,11 @@ export default function TelecomCableSplicingPage() {
                   desc: 'Splitting a feeder, adding capacity to a cable section, or rerouting service from one terminal to another all require splice work in the outside plant — often under traffic, in pedestals, or inside buried vaults.',
                 },
               ].map((item) => (
-                <li key={item.title} className="flex gap-4 bg-[#0f172a] border border-slate-800 rounded-xl p-4">
+                <li key={item.title} className="flex gap-4 bg-white border border-[#e8e8e8] rounded-xl p-4">
                   <span className="text-blue-400 mt-0.5 shrink-0">&#8594;</span>
                   <div>
-                    <div className="text-white font-semibold text-sm mb-1">{item.title}</div>
-                    <div className="text-slate-400 text-sm">{item.desc}</div>
+                    <div className="text-[#1f1f1f] font-semibold text-sm mb-1">{item.title}</div>
+                    <div className="text-[#555555] text-sm">{item.desc}</div>
                   </div>
                 </li>
               ))}
@@ -202,10 +202,10 @@ export default function TelecomCableSplicingPage() {
 
           {/* What to look for */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">
               What to Look for in a Telecom Splicing Contractor
             </h2>
-            <p className="text-slate-400 leading-relaxed mb-5">
+            <p className="text-[#555555] leading-relaxed mb-5">
               OSP splicing is not a skill learned from a YouTube tutorial. Qualified telecom splice contractors
               have years of hands-on experience, carrier-specific training, and the equipment and tools to
               work safely in manholes, on aerial strand, and in buried cable environments. Verify these
@@ -236,12 +236,12 @@ export default function TelecomCableSplicingPage() {
               ].map((item) => (
                 <li
                   key={item.title}
-                  className="flex gap-4 bg-[#0f172a] border border-slate-800 rounded-xl p-4"
+                  className="flex gap-4 bg-white border border-[#e8e8e8] rounded-xl p-4"
                 >
                   <span className="text-blue-400 mt-0.5 shrink-0">&#10003;</span>
                   <div>
-                    <div className="text-white font-semibold text-sm mb-1">{item.title}</div>
-                    <div className="text-slate-400 text-sm">{item.desc}</div>
+                    <div className="text-[#1f1f1f] font-semibold text-sm mb-1">{item.title}</div>
+                    <div className="text-[#555555] text-sm">{item.desc}</div>
                   </div>
                 </li>
               ))}
@@ -250,7 +250,7 @@ export default function TelecomCableSplicingPage() {
 
           {/* FAQs */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-6">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {[
                 {
@@ -274,50 +274,50 @@ export default function TelecomCableSplicingPage() {
                   a: 'A DSLAM (Digital Subscriber Line Access Multiplexer) is a device that aggregates DSL connections from multiple customers onto a high-speed backbone. Installing a new DSLAM cabinet in the field requires cutting into the feeder cable, building a new splice point, and distributing pairs from the DSLAM to the distribution plant — all of which is OSP splice work.',
                 },
               ].map((faq) => (
-                <div key={faq.q} className="bg-[#0f172a] border border-slate-800 rounded-xl p-5">
-                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p>
+                <div key={faq.q} className="bg-white border border-[#e8e8e8] rounded-xl p-5">
+                  <h3 className="text-[#1f1f1f] font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-[#555555] text-sm leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* CTA */}
-          <section className="bg-gradient-to-r from-blue-900/20 to-[#0ea5e9]/10 border border-blue-500/20 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-3">
+          <section className="bg-gradient-to-r from-blue-900/20 to-[#0b5cff]/10 border border-blue-500/20 rounded-2xl p-8 text-center">
+            <h2 className="text-2xl font-bold text-[#1f1f1f] mb-3">
               Need a Telecom Splice Crew for Your Project?
             </h2>
-            <p className="text-slate-400 mb-6 max-w-lg mx-auto">
+            <p className="text-[#555555] mb-6 max-w-lg mx-auto">
               Search SpliceList for verified outside plant telecom splicing contractors in your area. Filter
               by service type, emergency availability, and location.
             </p>
             <Link
               href="/search?category=TELECOM"
-              className="inline-flex items-center gap-2 bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
+              className="inline-flex items-center gap-2 bg-[#0b5cff] hover:bg-[#0946cc] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
             >
               Search Telecom Contractors
             </Link>
           </section>
 
           {/* Internal links */}
-          <section className="border-t border-slate-800 pt-10">
-            <h2 className="text-xl font-bold text-white mb-5">Related Splicing Services</h2>
+          <section className="border-t border-[#e8e8e8] pt-10">
+            <h2 className="text-xl font-bold text-[#1f1f1f] mb-5">Related Splicing Services</h2>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/fiber-optic-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:border-emerald-500/40 hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:border-emerald-500/40 hover:text-emerald-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Fiber Optic Splicing &#8594;
               </Link>
               <Link
                 href="/copper-cable-splicing"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:border-amber-500/40 hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:border-amber-500/40 hover:text-amber-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Copper Cable Splicing &#8594;
               </Link>
               <Link
                 href="/search"
-                className="bg-[#0f172a] border border-slate-700 text-slate-300 hover:border-blue-500/40 hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
+                className="bg-white border border-[#e8e8e8] text-[#555555] hover:border-blue-500/40 hover:text-blue-400 px-4 py-2 rounded-lg text-sm transition-all"
               >
                 Search All Contractors &#8594;
               </Link>
