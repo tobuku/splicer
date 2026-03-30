@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import ListingSearchWidget from '@/components/search/ListingSearchWidget'
 import SchemaScript from '@/components/seo/SchemaScript'
 
@@ -58,8 +59,41 @@ export default function TelecomCableSplicingPage() {
           </div>
         </div>
 
+        {/* Photo grid */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-3 gap-3">
+            <div className="rounded-xl overflow-hidden aspect-video shadow-md">
+              <Image
+                src="/images/copper/IMG_0074.jpg"
+                alt="Telecom technician performing aerial splice work"
+                width={400}
+                height={225}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden aspect-video shadow-md">
+              <Image
+                src="/images/copper/IMG_0089.jpg"
+                alt="Underground copper cable splice closure"
+                width={400}
+                height={225}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden aspect-video shadow-md">
+              <Image
+                src="/images/copper/IMG_0677.jpg"
+                alt="OSP cable splicing in manhole vault"
+                width={400}
+                height={225}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Content */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 space-y-14">
 
           {/* What is telecom cable splicing */}
           <section>

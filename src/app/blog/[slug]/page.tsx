@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import SchemaScript from '@/components/seo/SchemaScript'
 
@@ -13,6 +14,8 @@ interface Article {
   date: string
   readTime: string
   description: string
+  heroImage: string
+  heroAlt: string
   content: React.ReactNode
 }
 
@@ -24,6 +27,8 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     date: 'March 2025',
     readTime: '6 min read',
     description: 'Fusion splicing typically runs $50–$150 per splice point. Full breakdown of what drives cost — fiber type, access, contractor overhead, and testing.',
+    heroImage: '/images/fiber/IMG_5010.jpg',
+    heroAlt: 'Fiber splice tray with completed fusion splices',
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
@@ -136,6 +141,8 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     date: 'February 2025',
     readTime: '8 min read',
     description: 'Certifications, equipment, and local experience are the top factors. This guide walks through exactly what to verify before hiring a splice crew.',
+    heroImage: '/images/fiber/IMG_1252.jpg',
+    heroAlt: 'Fiber optic enclosure with SC APC connectors',
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
@@ -205,6 +212,8 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     date: 'February 2025',
     readTime: '5 min read',
     description: 'Different tools, techniques, and technician skills. Understanding the gap between copper and fiber repair saves time and prevents costly mistakes.',
+    heroImage: '/images/copper/IMG_0089.jpg',
+    heroAlt: 'Underground copper cable splice closure with colorful pairs',
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
@@ -264,6 +273,8 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     date: 'January 2025',
     readTime: '7 min read',
     description: 'OTDR testing verifies every splice and finds faults in a fiber run. Learn when to require it and what to expect in the results.',
+    heroImage: '/images/fiber/IMG_0989.jpg',
+    heroAlt: 'Fiber optic splice tray with organized fiber strands',
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
@@ -325,6 +336,8 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     date: 'January 2025',
     readTime: '6 min read',
     description: 'Fusion splicing delivers lower loss and better long-term performance. Mechanical is faster for certain applications. Here is when to use each.',
+    heroImage: '/images/fiber/IMG_0995.jpg',
+    heroAlt: 'Fiber optic fusion splice equipment in the field',
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
@@ -388,6 +401,8 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     date: 'December 2024',
     readTime: '9 min read',
     description: 'OSP splicing covers aerial, buried, and direct-buried plant environments. Tools, training, and safety requirements for OSP splicers.',
+    heroImage: '/images/copper/IMG_0677.jpg',
+    heroAlt: 'OSP cable splicing in underground manhole vault',
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
@@ -515,6 +530,18 @@ export default async function BlogPostPage({ params }: Props) {
               <span>{article.readTime}</span>
             </div>
           </header>
+
+          {/* Hero image */}
+          <div className="rounded-2xl overflow-hidden aspect-video mb-10 shadow-md">
+            <Image
+              src={article.heroImage}
+              alt={article.heroAlt}
+              width={800}
+              height={450}
+              className="w-full h-full object-cover"
+              priority
+            />
+          </div>
 
           {/* Body */}
           <article>
