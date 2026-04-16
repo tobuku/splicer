@@ -65,10 +65,14 @@ export default function FiberOpticSplicingPage() {
           <section>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { src: '/images/fiber/IMG_0989.jpg', alt: 'Fiber splice tray' },
-                { src: '/images/fiber/IMG_1252.jpg', alt: 'Fusion splicing in the field' },
-                { src: '/images/fiber/IMG_3450.jpg', alt: 'Fiber optic cable work' },
-                { src: '/images/fiber/IMG_5010.jpg', alt: 'Splice closure installation' },
+                { src: '/images/fiber/IMG_0989.jpg', alt: 'Fiber splice tray with completed fusion splices' },
+                { src: '/images/fiber/IMG_5022.JPG', alt: 'VFL red laser light tracing fiber in splice tray' },
+                { src: '/images/fiber/IMG_6491.JPG', alt: 'Sumitomo fusion splicer being loaded with fiber' },
+                { src: '/images/fiber/IMG_1962.JPG', alt: 'Clearfield wall-mount fiber enclosure installation' },
+                { src: '/images/fiber/IMG_4414.JPG', alt: 'OTDR screen showing live fiber test results' },
+                { src: '/images/fiber/IMG_5052.JPG', alt: 'Technicians working fiber splice tray in the field' },
+                { src: '/images/fiber/IMG_8940.JPG', alt: 'Technician feeding fiber into underground splice housing' },
+                { src: '/images/fiber/IMG_3525.jpg', alt: 'SC/APC fiber cassette with green connectors' },
               ].map((photo) => (
                 <div key={photo.src} className="rounded-lg overflow-hidden aspect-square">
                   <Image src={photo.src} alt={photo.alt} width={240} height={240} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />

@@ -40,12 +40,12 @@ export default function ToolsPage() {
           {/* Field photo strip */}
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-12">
             {[
-              { src: '/images/tools/IMG_0761.jpg', alt: 'Splicing tool' },
-              { src: '/images/tools/IMG_0762.jpg', alt: 'Fiber prep tool' },
-              { src: '/images/equipment/IMG_5898.jpg', alt: 'Fusion splicer' },
-              { src: '/images/equipment/IMG_5899.jpg', alt: 'OTDR equipment' },
-              { src: '/images/tools/IMG_0763.jpg', alt: 'Cable splicing tools' },
-              { src: '/images/equipment/IMG_6005.jpg', alt: 'Field equipment' },
+              { src: '/images/fiber/90S Fujikura Splice Kit.jpeg', alt: 'Fujikura 90S+ fusion splicer in carry case' },
+              { src: '/images/fiber/IMG_0817.JPG', alt: 'Fujikura 90S+ fusion splicer open in the field' },
+              { src: '/images/fiber/IMG_5309.JPG', alt: 'Fujikura 90S+ fusion splicer on job site' },
+              { src: '/images/fiber/IMG_1214.jpg', alt: 'Fujikura CT-30 high precision fiber cleaver' },
+              { src: '/images/fiber/IMG_3690.jpg', alt: 'Fujikura CT-30 fiber cleaver close-up' },
+              { src: '/images/fiber/IMG_1113.jpg', alt: 'JDSU T-BERD 2000 OTDR test equipment' },
             ].map((photo) => (
               <div key={photo.src} className="rounded-lg overflow-hidden aspect-square">
                 <Image src={photo.src} alt={photo.alt} width={200} height={200} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
