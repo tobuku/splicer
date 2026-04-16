@@ -8,11 +8,20 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'inside-a-transpacific-submarine-fiber-cable',
+    category: 'Fiber Optic',
+    categoryColor: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
+    title: 'Inside a Transpacific Submarine Fiber Cable - Cut Open',
+    excerpt: 'A Hawaii-based cable splicer got his hands on a decommissioned section of the cable that once carried internet traffic between California, Hawaii, and Asia. Here is what is actually inside it.',
+    date: 'April 2026',
+    readTime: '7 min read',
+  },
+  {
     slug: 'fiber-optic-splicing-cost',
     category: 'Fiber Optic',
     categoryColor: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
     title: 'Fiber Optic Splicing Cost Per Splice (2025 Guide)',
-    excerpt: 'Fusion splicing typically runs $50–$150 per splice point. Here is a full breakdown of what drives cost — fiber type, access, contractor overhead, and testing.',
+    excerpt: 'Fusion splicing typically runs $50–$150 per splice point. Here is a full breakdown of what drives cost - fiber type, access, contractor overhead, and testing.',
     date: 'March 2025',
     readTime: '6 min read',
   },

@@ -30,7 +30,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(false)
   const [queueLoading, setQueueLoading] = useState(false)
 
-  const ADMIN_PASS = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'splice2025'
+  const ADMIN_PASS = 'splice2025'
 
   useEffect(() => {
     if (sessionStorage.getItem('ADMIN_AUTHED') === 'true') {

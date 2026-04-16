@@ -20,19 +20,139 @@ interface Article {
 }
 
 const articles: Record<string, Omit<Article, 'slug'>> = {
+  'inside-a-transpacific-submarine-fiber-cable': {
+    title: 'Inside a Transpacific Submarine Fiber Cable - Cut Open',
+    category: 'Fiber Optic',
+    categoryColor: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
+    date: 'April 2026',
+    readTime: '7 min read',
+    description: 'A Hawaii-based cable splicer got his hands on a decommissioned section of the transpacific submarine cable that once carried internet traffic between California, Hawaii, and Asia. Here is what is actually inside it, layer by layer.',
+    heroImage: '/images/fiber/IMG_0414.JPG',
+    heroAlt: 'Cross-section of a decommissioned transpacific submarine fiber optic cable showing armor wires and copper power conductor',
+    content: (
+      <div className="space-y-8 text-[#555555] leading-relaxed">
+        <p className="text-lg text-[#555555]">
+          Most people know that the internet runs on fiber optic cable. Far fewer know that roughly 99% of all international internet traffic - every email, video call, and file transfer between continents - travels through a network of submarine cables laid across the ocean floor. This is what one of those cables looks like when you cut it open.
+        </p>
+
+        <section>
+          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">How We Got a Section of It</h2>
+          <p className="mb-4">
+            Working as a cable splicer in Hawaii puts you closer to submarine cable infrastructure than most people will ever get. Hawaii sits at the crossroads of multiple transpacific cable systems - the islands are both a landing point and a waystation for cables running between the US mainland, Japan, the Philippines, Guam, and beyond.
+          </p>
+          <p>
+            This particular section is a remnant of a decommissioned transpacific submarine cable system that once connected the continental United States to the Pacific Islands and Asia via California. When these systems are retired, sections sometimes surface - salvaged during infrastructure work or preserved as technical artifacts. What you are looking at is a genuine piece of the physical backbone of the internet.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">The Cable Cross-Section: Layer by Layer</h2>
+          <div className="rounded-2xl overflow-hidden my-6 shadow-md">
+            <Image
+              src="/images/fiber/IMG_0413.JPG"
+              alt="Side view of submarine fiber cable cross-section showing armor wires and internal structure"
+              width={800}
+              height={500}
+              className="w-full object-cover"
+            />
+          </div>
+          <p className="mb-6">
+            Submarine cables are engineered to survive conditions that would destroy any land-based cable within months - crushing pressure, salt water, trawling nets, ship anchors, and earthquake-driven seafloor movement. Every layer in the cross-section exists for a specific reason.
+          </p>
+
+          <div className="space-y-5">
+            {[
+              {
+                layer: 'Outer Polyethylene Jacket',
+                color: 'text-blue-400',
+                desc: 'The outermost layer is a thick high-density polyethylene (HDPE) sheath. It provides the first line of protection against abrasion, seawater, and mechanical damage. In shallow-water sections near shore - where cable is most vulnerable to anchors and fishing gear - additional armor layers are added over this jacket.',
+              },
+              {
+                layer: 'Steel Armor Wires',
+                color: 'text-slate-400',
+                desc: 'The ring of steel wires visible in the cross-section is the tensile strength member of the cable. During installation, a cable-laying ship lowers miles of cable under enormous tension. The armor wires carry that load. They also provide mechanical protection against crushing and abrasion on the seafloor. Deep-water cable uses fewer armor layers than shallow nearshore cable - at 4,000 meters depth, ship anchors are not a concern.',
+              },
+              {
+                layer: 'Copper Power Conductor',
+                color: 'text-amber-400',
+                desc: 'The central copper tube or conductor is one of the most critical - and least-known - components of a submarine cable. Undersea fiber requires signal repeaters (amplifiers) spaced every 50–100 km along the cable route. These repeaters run on DC electrical power fed through the copper conductor from shore-based power feed equipment at the cable landing stations. A transpacific cable may carry 10,000 volts DC through this conductor to power hundreds of repeaters across the ocean floor.',
+              },
+              {
+                layer: 'Inner Insulation and Fiber Unit',
+                color: 'text-emerald-400',
+                desc: 'Inside the copper conductor sits the actual fiber optic unit - typically a small bundle of single-mode fiber strands surrounded by a water-blocking compound and a steel or fiber-reinforced plastic strength member. Despite the massive engineering around it, the actual data-carrying glass is surprisingly thin - each fiber strand is about 125 microns in diameter, roughly the width of a human hair.',
+              },
+            ].map((item) => (
+              <div key={item.layer} className="bg-white border border-[#e8e8e8] rounded-xl p-5">
+                <h3 className={`font-bold mb-2 ${item.color}`}>{item.layer}</h3>
+                <p className="text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">A Few Fibers Carry Everything</h2>
+          <p className="mb-4">
+            Here is the part that surprises most people: a modern submarine cable may contain only 8 to 16 fiber pairs (16–32 individual strands), yet carry terabits of data per second. The capacity comes not from fiber count but from dense wavelength division multiplexing (DWDM) - packing hundreds of separate light wavelengths onto a single fiber, each carrying its own data stream simultaneously.
+          </p>
+          <p>
+            By contrast, a land-based fiber cable serving a city neighborhood might contain 144 or 288 fiber strands - far more than a transpacific cable - but carry a fraction of the traffic because it lacks the high-end DWDM amplification equipment.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">Hawaii at the Center of the Pacific Network</h2>
+          <div className="rounded-2xl overflow-hidden my-6 shadow-md">
+            <Image
+              src="/images/fiber/submarine-cable-map.jpg"
+              alt="Global submarine cable map showing transpacific cable routes connecting the US, Hawaii, and Asia"
+              width={800}
+              height={450}
+              className="w-full object-cover"
+            />
+          </div>
+          <p className="mb-4 text-xs text-[#999999]">Map source: TeleGeography submarinecablemap.com</p>
+          <p className="mb-4">
+            Look at the concentration of cable routes across the North Pacific on any submarine cable map and you will see why Hawaii matters. Multiple cable systems converge on the islands - some terminating there, others passing through repeater stations on their way between California and Japan, the Philippines, Guam, and Australia.
+          </p>
+          <p className="mb-4">
+            The Hawaii Island Fibre Network (HIFN) handles inter-island connectivity within the Hawaiian archipelago, linking Oahu, Maui, Hawaii Island, Kauai, Molokai, and Lanai. The new Hawaiian Islands Fiber Link (HIFL) - a $120+ million public-private project currently under construction - will replace and dramatically expand that capacity with 24 fiber pairs and a 25-year design life.
+          </p>
+          <p>
+            But the cables that connect Hawaii to the rest of the world are the transpacific systems - the ones that this cross-section came from. When you make a video call from Honolulu to Tokyo, your signal travels through a cable not unlike the one pictured here, sitting on the seafloor somewhere between 1,000 and 7,000 meters below the surface.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">What This Has to Do with Splicing</h2>
+          <p className="mb-4">
+            Submarine cable splicing is one of the most specialized forms of fiber work in the industry. When a submarine cable is damaged - by a ship anchor, an earthquake, or a fishing trawler - a cable repair ship is dispatched to locate the fault using specialized OTDR equipment, grapple the cable up from the seafloor, cut out the damaged section, splice in a new segment, and lower it back down. The whole operation can take weeks and costs millions of dollars.
+          </p>
+          <p>
+            The splicing technique is the same fundamental process used in any fiber splice - clean, cleave, fuse, protect - but performed under unusual conditions with specialized pressure-housing closures rated for deep-sea deployment. The same physics that governs a 0.05 dB splice loss on a land-based fiber plant governs a splice 4,000 meters underwater.
+          </p>
+          <p>
+            For those of us who work with fiber on land every day, a physical section of retired submarine cable is a useful reminder of what the craft connects to - a global network of glass and light that makes modern communication possible.
+          </p>
+        </section>
+      </div>
+    ),
+  },
+
   'fiber-optic-splicing-cost': {
     title: 'Fiber Optic Splicing Cost Per Splice (2025 Guide)',
     category: 'Fiber Optic',
     categoryColor: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
     date: 'March 2025',
     readTime: '6 min read',
-    description: 'Fusion splicing typically runs $50–$150 per splice point. Full breakdown of what drives cost — fiber type, access, contractor overhead, and testing.',
+    description: 'Fusion splicing typically runs $50–$150 per splice point. Full breakdown of what drives cost - fiber type, access, contractor overhead, and testing.',
     heroImage: '/images/fiber/IMG_5010.jpg',
     heroAlt: 'Fiber splice tray with completed fusion splices',
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
-          Fiber optic splicing costs vary widely depending on project size, location, fiber type, and site conditions. For most commercial projects, expect to pay $50–$150 per fusion splice point — but that number can swing in either direction based on the factors below.
+          Fiber optic splicing costs vary widely depending on project size, location, fiber type, and site conditions. For most commercial projects, expect to pay $50–$150 per fusion splice point - but that number can swing in either direction based on the factors below.
         </p>
 
         <section>
@@ -53,7 +173,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
                 {[
                   ['Standard single-mode, accessible site', '$50–$85', 'Conduit or aerial, good access'],
                   ['Underground vault work', '$80–$130', 'Confined space, extra setup time'],
-                  ['Ribbon fiber (mass fusion)', '$15–$40 per ribbon', '12-fiber ribbon — fast but specialized'],
+                  ['Ribbon fiber (mass fusion)', '$15–$40 per ribbon', '12-fiber ribbon - fast but specialized'],
                   ['Emergency / after-hours', '$150–$300+', 'Overtime rates, rapid mobilization'],
                   ['Remote / rural location', '$100–$200+', 'Travel premium, lodging may apply'],
                   ['OTDR acceptance testing only', '$75–$150/hr', 'Per hour, not per splice'],
@@ -74,17 +194,17 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
 
           <h3 className="text-lg font-semibold text-[#1f1f1f] mb-2">1. Fiber Count</h3>
           <p className="mb-4">
-            A 12-fiber cable has 12 splice points per closure. A 144-fiber cable has 144. Large fiber counts on a single project drive the per-splice rate down through volume pricing — a contractor who quotes $100/splice for a 24-fiber job may quote $55/splice for a 288-fiber build. Always ask about volume pricing on large projects.
+            A 12-fiber cable has 12 splice points per closure. A 144-fiber cable has 144. Large fiber counts on a single project drive the per-splice rate down through volume pricing - a contractor who quotes $100/splice for a 24-fiber job may quote $55/splice for a 288-fiber build. Always ask about volume pricing on large projects.
           </p>
 
           <h3 className="text-lg font-semibold text-[#1f1f1f] mb-2">2. Access and Site Conditions</h3>
           <p className="mb-4">
-            Aerial splicing from a bucket truck in a clear suburban street is faster and cheaper than underground vault work in a busy downtown intersection requiring traffic control. Confined space entry (vaults classified as permit-required) adds safety overhead, equipment requirements, and often a second crew member as standby — all of which increase cost.
+            Aerial splicing from a bucket truck in a clear suburban street is faster and cheaper than underground vault work in a busy downtown intersection requiring traffic control. Confined space entry (vaults classified as permit-required) adds safety overhead, equipment requirements, and often a second crew member as standby - all of which increase cost.
           </p>
 
           <h3 className="text-lg font-semibold text-[#1f1f1f] mb-2">3. Fiber Type</h3>
           <p className="mb-4">
-            Standard OS2 single-mode fiber (the most common OSP plant) is straightforward. Ribbon fiber requires a mass fusion splicer — not all contractors own one. Bend-insensitive fiber (like Corning ClearCurve) and specialty fiber types may require different cleave settings and technique. Always confirm the contractor has experience with your specific fiber.
+            Standard OS2 single-mode fiber (the most common OSP plant) is straightforward. Ribbon fiber requires a mass fusion splicer - not all contractors own one. Bend-insensitive fiber (like Corning ClearCurve) and specialty fiber types may require different cleave settings and technique. Always confirm the contractor has experience with your specific fiber.
           </p>
 
           <h3 className="text-lg font-semibold text-[#1f1f1f] mb-2">4. Mobilization and Travel</h3>
@@ -94,7 +214,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
 
           <h3 className="text-lg font-semibold text-[#1f1f1f] mb-2">5. Materials</h3>
           <p className="mb-4">
-            Splice closures, enclosures, splice trays, and fiber protection sleeves are not labor — they are materials billed separately. A single inline closure can cost $80–$300 in material depending on type and capacity. Dome closures for buried applications, wall-mount enclosures for buildings, and aerial splice cases all have different price points. Confirm whether your quote includes materials or is labor only.
+            Splice closures, enclosures, splice trays, and fiber protection sleeves are not labor - they are materials billed separately. A single inline closure can cost $80–$300 in material depending on type and capacity. Dome closures for buried applications, wall-mount enclosures for buildings, and aerial splice cases all have different price points. Confirm whether your quote includes materials or is labor only.
           </p>
 
           <h3 className="text-lg font-semibold text-[#1f1f1f] mb-2">6. Testing and Documentation</h3>
@@ -117,11 +237,11 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">Red Flags in a Splicing Quote</h2>
           <ul className="space-y-3">
             {[
-              'No mention of OTDR testing — corners are being cut.',
-              'Quote is verbal only with no written scope — no protection if there is a dispute.',
-              'Extremely low per-splice rate with no experience verification — quality will suffer.',
-              'No itemization of materials vs. labor — hard to compare bids accurately.',
-              'No warranty on splice loss — professional splicers stand behind their work.',
+              'No mention of OTDR testing - corners are being cut.',
+              'Quote is verbal only with no written scope - no protection if there is a dispute.',
+              'Extremely low per-splice rate with no experience verification - quality will suffer.',
+              'No itemization of materials vs. labor - hard to compare bids accurately.',
+              'No warranty on splice loss - professional splicers stand behind their work.',
             ].map((flag) => (
               <li key={flag} className="flex items-start gap-3 bg-white border border-[#e8e8e8] rounded-xl p-4">
                 <span className="text-red-400 shrink-0 mt-0.5">&#9888;</span>
@@ -146,7 +266,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
-          Fiber optic splicing is skilled trade work where the quality of the result is not always visible until a problem shows up — sometimes weeks or months later, after a system goes live. Choosing the wrong contractor means failed OTDR tests, intermittent outages, and expensive remediation. Here is what separates a qualified splice crew from a cheap one.
+          Fiber optic splicing is skilled trade work where the quality of the result is not always visible until a problem shows up - sometimes weeks or months later, after a system goes live. Choosing the wrong contractor means failed OTDR tests, intermittent outages, and expensive remediation. Here is what separates a qualified splice crew from a cheap one.
         </p>
 
         <section>
@@ -165,10 +285,10 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
         <section>
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">Step 2: Ask About Equipment</h2>
           <p className="mb-4">
-            Fusion splicer quality varies significantly. Professional-grade units from Fujikura (70S+, 90S+), Sumitomo (Z1C, T-502), and Fitel (S179A) produce consistent, low-loss splices and include automated alignment using core or cladding alignment systems. Inexpensive splicers — especially unbranded units from overseas — produce higher-loss splices and are more prone to failure in field conditions.
+            Fusion splicer quality varies significantly. Professional-grade units from Fujikura (70S+, 90S+), Sumitomo (Z1C, T-502), and Fitel (S179A) produce consistent, low-loss splices and include automated alignment using core or cladding alignment systems. Inexpensive splicers - especially unbranded units from overseas - produce higher-loss splices and are more prone to failure in field conditions.
           </p>
           <p className="mb-4">
-            Ask what fusion splicer model the contractor uses. If they cannot name the model, that is a yellow flag. Also ask about their OTDR — brand, wavelength capability (1310nm and 1550nm minimum for single-mode work), and whether they can export trace files in a standard format (SOR or .trc) for your records.
+            Ask what fusion splicer model the contractor uses. If they cannot name the model, that is a yellow flag. Also ask about their OTDR - brand, wavelength capability (1310nm and 1550nm minimum for single-mode work), and whether they can export trace files in a standard format (SOR or .trc) for your records.
           </p>
           <p>
             For ribbon fiber or mass fusion work, confirm the contractor has a dedicated ribbon splicer. Standard single-fiber units cannot mass-splice ribbon.
@@ -181,7 +301,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
             A contractor who regularly works in your area knows the local underground infrastructure, conduit routing, and right-of-way requirements. They are familiar with local permit requirements and have relationships with utilities and municipalities. This reduces delays and surprises on the job.
           </p>
           <p>
-            Ask for references from similar projects in your area. A contractor who can name specific local jobs — a downtown conduit system, a campus fiber build, a carrier ring segment — has demonstrable local experience. Be skeptical of contractors who fly crews in from out of state for routine commercial work.
+            Ask for references from similar projects in your area. A contractor who can name specific local jobs - a downtown conduit system, a campus fiber build, a carrier ring segment - has demonstrable local experience. Be skeptical of contractors who fly crews in from out of state for routine commercial work.
           </p>
         </section>
 
@@ -191,14 +311,14 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
             Before awarding work, get a written quote with a scope of work that specifies: fiber count, number of closures, splice loss specification (e.g., &lt;0.1 dB average per splice), OTDR testing at two wavelengths, and documentation deliverables (trace files, splice tray diagrams, as-built records).
           </p>
           <p>
-            A contractor who resists putting details in writing is a contractor who plans to be hard to hold accountable. Professional splice crews are accustomed to working under written scope — it protects both parties.
+            A contractor who resists putting details in writing is a contractor who plans to be hard to hold accountable. Professional splice crews are accustomed to working under written scope - it protects both parties.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">Step 5: Understand the Warranty</h2>
           <p>
-            Quality splice contractors will warranty their work for a defined period — typically 1 year on labor for field splices. This means if a splice fails OTDR testing after turnover, or if a sealed closure develops a problem attributable to workmanship, they will return and correct it at no charge. Get the warranty terms in writing as part of your contract.
+            Quality splice contractors will warranty their work for a defined period - typically 1 year on labor for field splices. This means if a splice fails OTDR testing after turnover, or if a sealed closure develops a problem attributable to workmanship, they will return and correct it at no charge. Get the warranty terms in writing as part of your contract.
           </p>
         </section>
       </div>
@@ -217,7 +337,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
-          Fiber and copper cable repair both require trained splicers, but the tools, techniques, and failure modes are completely different. Sending a fiber splicer to repair a copper cable — or vice versa — wastes time and risks making the damage worse. Here is what you need to know before you call for help.
+          Fiber and copper cable repair both require trained splicers, but the tools, techniques, and failure modes are completely different. Sending a fiber splicer to repair a copper cable - or vice versa - wastes time and risks making the damage worse. Here is what you need to know before you call for help.
         </p>
 
         <section>
@@ -236,7 +356,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
             Fiber repair requires a fusion splicer, fiber cleaver, OTDR, and splice closure hardware. The damaged section is located using the OTDR, the cable is cut back on both sides of the damage to expose clean fiber, the individual strands are fusion-spliced together, and the joint is sealed in an appropriate closure for the environment (buried, aerial, or in-building).
           </p>
           <p>
-            Fiber repair is precise, clean work. The fiber ends must be cleaved flat and free of contamination — a single fingerprint or dust particle on a fiber end will cause elevated splice loss. Experienced fiber splicers work in a controlled environment even in the field, using a splice trailer or clean workspace inside a service vehicle.
+            Fiber repair is precise, clean work. The fiber ends must be cleaved flat and free of contamination - a single fingerprint or dust particle on a fiber end will cause elevated splice loss. Experienced fiber splicers work in a controlled environment even in the field, using a splice trailer or clean workspace inside a service vehicle.
           </p>
         </section>
 
@@ -246,10 +366,10 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
             Copper telephone and data cable repair uses a different set of tools: wire maps, TDR (Time Domain Reflectometer for copper), punch-down tools, and cable-specific splice connectors. Buried copper cable is commonly repaired using UY or B-wire connectors with gel fill, or direct-burial splice cases with moisture-blocking compound.
           </p>
           <p className="mb-4">
-            Copper repair is faster per-pair than fiber per-strand but scales differently — a 100-pair copper cable has 200 individual conductors to splice, each requiring an individual connection. High-pair-count copper repairs are labor-intensive and time-consuming.
+            Copper repair is faster per-pair than fiber per-strand but scales differently - a 100-pair copper cable has 200 individual conductors to splice, each requiring an individual connection. High-pair-count copper repairs are labor-intensive and time-consuming.
           </p>
           <p>
-            Copper splicers also test differently — pair-by-pair continuity, resistance, and capacitance testing rather than optical power loss. TDR testing locates faults by sending a pulse down the cable and measuring the reflection time from a break or short.
+            Copper splicers also test differently - pair-by-pair continuity, resistance, and capacitance testing rather than optical power loss. TDR testing locates faults by sending a pulse down the cable and measuring the reflection time from a break or short.
           </p>
         </section>
 
@@ -278,16 +398,16 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
-          An OTDR — Optical Time Domain Reflectometer — is the primary quality-assurance tool in fiber optic splicing. It sends a pulse of light down the fiber and measures how long it takes for reflections to return, allowing the technician to map every event on the fiber with precise distance and loss values.
+          An OTDR - Optical Time Domain Reflectometer - is the primary quality-assurance tool in fiber optic splicing. It sends a pulse of light down the fiber and measures how long it takes for reflections to return, allowing the technician to map every event on the fiber with precise distance and loss values.
         </p>
 
         <section>
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">How OTDR Testing Works</h2>
           <p className="mb-4">
-            The OTDR injects a short pulse of laser light into the fiber and listens for backscattered light returning to the instrument. Different events on the fiber — splices, connectors, bends, and breaks — each produce a characteristic reflection signature. The OTDR plots these events on a trace showing distance (horizontal axis) and optical power (vertical axis).
+            The OTDR injects a short pulse of laser light into the fiber and listens for backscattered light returning to the instrument. Different events on the fiber - splices, connectors, bends, and breaks - each produce a characteristic reflection signature. The OTDR plots these events on a trace showing distance (horizontal axis) and optical power (vertical axis).
           </p>
           <p>
-            Each splice point appears on the trace as a drop in the signal level. The size of that drop — measured in decibels — is the splice loss. A good fusion splice shows less than 0.1 dB of loss. A bad splice, a contaminated connector, or a tight bend shows a larger drop.
+            Each splice point appears on the trace as a drop in the signal level. The size of that drop - measured in decibels - is the splice loss. A good fusion splice shows less than 0.1 dB of loss. A bad splice, a contaminated connector, or a tight bend shows a larger drop.
           </p>
         </section>
 
@@ -312,10 +432,10 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
         <section>
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">When to Require OTDR Testing</h2>
           <p className="mb-4">
-            OTDR testing should be required on every fiber installation and every splice repair. The only exception is very short indoor runs (typically under 100 meters) where the OTDR dead zone is longer than the cable itself — in those cases, end-to-end insertion loss testing with a light source and power meter is the appropriate method.
+            OTDR testing should be required on every fiber installation and every splice repair. The only exception is very short indoor runs (typically under 100 meters) where the OTDR dead zone is longer than the cable itself - in those cases, end-to-end insertion loss testing with a light source and power meter is the appropriate method.
           </p>
           <p>
-            Always require OTDR traces as part of turnover documentation for new cable plant. These traces become the baseline record — if a problem develops later, the contractor or carrier can re-test and compare to the original baseline to identify what changed.
+            Always require OTDR traces as part of turnover documentation for new cable plant. These traces become the baseline record - if a problem develops later, the contractor or carrier can re-test and compare to the original baseline to identify what changed.
           </p>
         </section>
 
@@ -360,10 +480,10 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
         <section>
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">Mechanical Splicing</h2>
           <p className="mb-4">
-            Mechanical splicing uses a pre-fabricated alignment sleeve filled with index-matching gel to hold two prepared fiber ends in alignment. No electricity or fusion is involved. The splice takes about 5 minutes to complete and requires only a fiber cleaver and the mechanical splice connector — no fusion splicer.
+            Mechanical splicing uses a pre-fabricated alignment sleeve filled with index-matching gel to hold two prepared fiber ends in alignment. No electricity or fusion is involved. The splice takes about 5 minutes to complete and requires only a fiber cleaver and the mechanical splice connector - no fusion splicer.
           </p>
           <p className="mb-4">
-            Typical mechanical splice loss is 0.2–0.5 dB, compared to 0.01–0.1 dB for fusion. This higher loss limits their use to shorter runs and lower-bandwidth applications. Mechanical splices are also less durable over time — the index gel can dry out, and the splice is susceptible to moisture ingress.
+            Typical mechanical splice loss is 0.2–0.5 dB, compared to 0.01–0.1 dB for fusion. This higher loss limits their use to shorter runs and lower-bandwidth applications. Mechanical splices are also less durable over time - the index gel can dry out, and the splice is susceptible to moisture ingress.
           </p>
           <p>
             Mechanical splices are most useful for emergency temporary repairs (to restore service while permanent fusion splicing is arranged), very short indoor runs, and situations where a fusion splicer is not available.
@@ -406,7 +526,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
     content: (
       <div className="space-y-8 text-[#555555] leading-relaxed">
         <p className="text-lg text-[#555555]">
-          Outside plant (OSP) cable splicing is the work done on telecommunications cables that run through conduit, direct-buried, or aerial strand outside of buildings. It is physically demanding, weather-dependent, and technically demanding — and it is the core of what most professional cable splicers do.
+          Outside plant (OSP) cable splicing is the work done on telecommunications cables that run through conduit, direct-buried, or aerial strand outside of buildings. It is physically demanding, weather-dependent, and technically demanding - and it is the core of what most professional cable splicers do.
         </p>
 
         <section>
@@ -434,14 +554,14 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
             A professional OSP splicer carries a significant equipment load. Beyond the fusion splicer and OTDR, an experienced crew travels with: fiber cleavers, fiber holders and prep tools, splice trays and closure hardware, cable cutting and jacket stripping tools, a laptop or tablet for trace analysis, and a service vehicle configured as a mobile workspace.
           </p>
           <p>
-            For copper OSP work, the kit includes a TDR, pair-gain test set, cable locator, tone generator, and a selection of splice connectors for both standard and gel-filled applications. High-pair-count copper splicers often work in pairs — one splicing, one running wire from the cable count.
+            For copper OSP work, the kit includes a TDR, pair-gain test set, cable locator, tone generator, and a selection of splice connectors for both standard and gel-filled applications. High-pair-count copper splicers often work in pairs - one splicing, one running wire from the cable count.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">Safety in OSP Work</h2>
           <p className="mb-4">
-            OSP splicing involves real hazards that desk-based workers do not encounter. Traffic control is required for any work in or adjacent to a roadway. Aerial work from a bucket truck requires a qualified operator and awareness of overhead power lines — accidental contact with an energized line is a fatal hazard. Underground vault entry requires confined space entry procedures when the space meets OSHA&apos;s permit-required criteria.
+            OSP splicing involves real hazards that desk-based workers do not encounter. Traffic control is required for any work in or adjacent to a roadway. Aerial work from a bucket truck requires a qualified operator and awareness of overhead power lines - accidental contact with an energized line is a fatal hazard. Underground vault entry requires confined space entry procedures when the space meets OSHA&apos;s permit-required criteria.
           </p>
           <p>
             Experienced OSP contractors maintain OSHA 10 or OSHA 30 certifications, confined space entry training, and first aid/CPR. When hiring a contractor for OSP work, ask about their safety program and whether they carry the appropriate insurance for the work environment.
@@ -451,7 +571,7 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
         <section>
           <h2 className="text-2xl font-bold text-[#1f1f1f] mb-4">OSP Splice Closure Selection</h2>
           <p>
-            The choice of splice closure depends on environment and cable type. Dome closures are the standard for buried and underground applications — they provide good moisture protection and accommodate a range of cable diameters. Aerial splice cases are designed for strand lashing and must handle UV, temperature cycling, and wind vibration. In-line closures are used where cables enter buildings or transition from outdoor to indoor-rated cable. Matching the closure type to the environment is as important as the splice quality inside it.
+            The choice of splice closure depends on environment and cable type. Dome closures are the standard for buried and underground applications - they provide good moisture protection and accommodate a range of cable diameters. Aerial splice cases are designed for strand lashing and must handle UV, temperature cycling, and wind vibration. In-line closures are used where cables enter buildings or transition from outdoor to indoor-rated cable. Matching the closure type to the environment is as important as the splice quality inside it.
           </p>
         </section>
       </div>
@@ -460,11 +580,12 @@ const articles: Record<string, Omit<Article, 'slug'>> = {
 }
 
 const relatedPosts: Record<string, string[]> = {
+  'inside-a-transpacific-submarine-fiber-cable': ['fusion-splicing-vs-mechanical-splicing', 'what-is-otdr-testing'],
   'fiber-optic-splicing-cost': ['how-to-choose-cable-splicing-contractor', 'fusion-splicing-vs-mechanical-splicing'],
   'how-to-choose-cable-splicing-contractor': ['fiber-optic-splicing-cost', 'what-is-otdr-testing'],
   'copper-vs-fiber-cable-repair': ['osp-cable-splicing-basics', 'how-to-choose-cable-splicing-contractor'],
-  'what-is-otdr-testing': ['fusion-splicing-vs-mechanical-splicing', 'fiber-optic-splicing-cost'],
-  'fusion-splicing-vs-mechanical-splicing': ['what-is-otdr-testing', 'fiber-optic-splicing-cost'],
+  'what-is-otdr-testing': ['fusion-splicing-vs-mechanical-splicing', 'inside-a-transpacific-submarine-fiber-cable'],
+  'fusion-splicing-vs-mechanical-splicing': ['what-is-otdr-testing', 'inside-a-transpacific-submarine-fiber-cable'],
   'osp-cable-splicing-basics': ['copper-vs-fiber-cable-repair', 'how-to-choose-cable-splicing-contractor'],
 }
 
