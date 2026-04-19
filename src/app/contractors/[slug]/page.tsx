@@ -243,16 +243,13 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
 
               {/* Map placeholder */}
               <div className="bg-white border border-[#e8e8e8] rounded-2xl overflow-hidden">
-                <div className="h-48 bg-slate-900 flex items-center justify-center">
-                  <div className="text-center text-[#777777]">
-                    <svg className="w-10 h-10 mx-auto mb-2" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                    <p className="text-sm">{listing.city}, {listing.state}</p>
-                    <p className="text-xs mt-1">Map coming soon</p>
-                  </div>
-                </div>
+                <iframe
+                  title={`Map of ${listing.city}, ${listing.state}`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(`${listing.city}, ${listing.state}`)}&output=embed`}
+                  className="w-full h-48"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
 
               {/* Reviews */}
