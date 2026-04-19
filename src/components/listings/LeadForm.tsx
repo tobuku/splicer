@@ -28,14 +28,13 @@ export default function LeadForm({ listingId, listingName }: Props) {
   async function onSubmit(data: FormData) {
     setServerError('')
     try {
-      const res = await fetch('/api/leads', {
+      const res = await fetch('https://formspree.io/f/xdayzpvr', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, listingId }),
+        body: JSON.stringify({ ...data, listingId, listingName, _subject: `Quote Request — ${listingName}` }),
       })
       if (!res.ok) {
-        const err = await res.json()
-        setServerError(err.error || 'Submission failed')
+        setServerError('Submission failed. Please try again.')
         return
       }
       setSubmitted(true)

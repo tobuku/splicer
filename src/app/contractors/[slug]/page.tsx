@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import LeadForm from '@/components/listings/LeadForm'
 import { categoryLabel, categoryColor } from '@/lib/utils'
 
 interface Listing {
@@ -277,13 +276,6 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
 
             {/* Sidebar */}
             <div className="space-y-5">
-              {/* Lead form */}
-              <div className="bg-white border border-[#0b5cff]/30 rounded-2xl p-6 lg:sticky lg:top-28">
-                <h2 className="text-lg font-bold text-[#1f1f1f] mb-1">Get a Free Quote</h2>
-                <p className="text-[#555555] text-sm mb-5">Send your project details to {listing.businessName}.</p>
-                <LeadForm listingId={listing.id} listingName={listing.businessName} />
-              </div>
-
               {/* Contact info */}
               <div className="bg-white border border-[#e8e8e8] rounded-2xl p-5">
                 <h3 className="text-[#1f1f1f] font-semibold mb-4">Contact</h3>
