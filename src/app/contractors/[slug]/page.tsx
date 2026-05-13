@@ -11,6 +11,7 @@ interface Listing {
   city: string
   state: string
   address: string | null
+  zip: string | null
   phone: string | null
   website: string | null
   email: string | null
@@ -161,7 +162,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
                     </div>
                     <h1 className="text-2xl sm:text-3xl font-bold text-[#1f1f1f] mb-1">{listing.businessName}</h1>
                     <p className="text-[#555555] text-sm">
-                      {listing.city}, {listing.state}
+                      {listing.city}, {listing.state}{listing.zip ? ` ${listing.zip}` : ''}
                       {listing.yearsInBusiness ? ` · ${listing.yearsInBusiness} years in business` : ''}
                     </p>
                   </div>
