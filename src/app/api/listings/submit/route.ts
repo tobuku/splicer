@@ -122,7 +122,7 @@ export async function POST(req: NextRequest) {
           state,
           zip: body.zip.trim(),
           services,
-          category,
+          category: category as ('TELECOM' | 'FIBER' | 'COPPER')[],
           description: body.description.trim(),
           certifications: body.certifications
             ? body.certifications.split(',').map((s: string) => s.trim()).filter(Boolean)
