@@ -284,6 +284,14 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
                     {listing.phone}
                   </a>
                 )}
+                {listing.email && (
+                  <a href={`mailto:${listing.email}`} className="flex items-center gap-3 text-[#555555] hover:text-[#0b5cff] transition-colors text-sm mb-3">
+                    <svg className="w-4 h-4 text-[#0b5cff] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    {listing.email}
+                  </a>
+                )}
                 {listing.website && (
                   <a href={listing.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#555555] hover:text-[#0b5cff] transition-colors text-sm">
                     <svg className="w-4 h-4 text-[#0b5cff] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
