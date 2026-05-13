@@ -41,6 +41,7 @@ const mockListings: Record<string, Listing> = {
     phone: '(310) 555-0142',
     website: 'https://example.com',
     email: null,
+    zip: null,
     category: ['FIBER', 'TELECOM'],
     services: ['Fusion Splicing', 'OTDR Testing', 'Aerial Fiber Installation', 'Underground Fiber Repair', 'Splice Closure Work', 'FTTX Splicing'],
     certifications: ['BICSI RCDD', 'FOA CFOT', 'OSHA 10', 'California C-7 Contractor'],

@@ -71,6 +71,8 @@ export default function AdminDashboard() {
       body: JSON.stringify({ published: !published }),
     })
     setListings(prev => prev.map(l => l.id === id ? { ...l, published: !published } : l))
+    loadQueue()
+    fetch('/api/admin/stats').then(r => r.json()).then(setStats).catch(() => {})
   }
 
   async function deleteListing(id: string) {
