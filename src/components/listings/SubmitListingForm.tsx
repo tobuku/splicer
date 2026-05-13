@@ -63,13 +63,14 @@ export default function SubmitListingForm() {
   async function onSubmit(data: FormValues) {
     setServerError(null)
     try {
-      const res = await fetch('https://formspree.io/f/xdayzpvr', {
+      const res = await fetch('/api/listings/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, _subject: 'New Listing Submission — SpliceList' }),
+        body: JSON.stringify(data),
       })
+      const json = await res.json().catch(() => ({}))
       if (!res.ok) {
-        setServerError('Submission failed. Please try again.')
+        setServerError((json as { error?: string }).error ?? 'Submission failed. Please try again.')
         return
       }
       setSubmitted(true)
