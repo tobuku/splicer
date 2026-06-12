@@ -5,7 +5,7 @@ import ListingSearchWidget from '@/components/search/ListingSearchWidget'
 import SchemaScript from '@/components/seo/SchemaScript'
 
 export const metadata: Metadata = {
-  title: 'Copper Cable Splicing Contractors | Underground Cable Repair',
+  title: 'Copper Cable Splicing Contractors, Underground Cable Repair',
   description:
     'Find certified copper cable splicing contractors for 25-pair, 50-pair, and large-count buried cable repair, pedestal work, and telephone line splicing. Verified crews nationwide.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'pedestal cable splicing',
   ],
   openGraph: {
-    title: 'Copper Cable Splicing Contractors | SpliceList',
+    title: 'Copper Cable Splicing Contractors, SpliceList',
     description:
       'Connect with verified copper cable splicing crews for buried cable repair, pedestal work, 25-pair to 2400-pair cable, and emergency telephone line restoration.',
   },

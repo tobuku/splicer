@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cityName = titleCase(city)
   const stateName = titleCase(state)
   return {
-    title: `Cable Splicing Contractors in ${cityName}, ${stateName} | SpliceList`,
+    title: `Cable Splicing Contractors in ${cityName}, ${stateName}`,
     description: `Find certified fiber optic, telecom, and copper cable splicing contractors in ${cityName}, ${stateName}. Get quotes from verified local splice crews for commercial and emergency projects.`,
     keywords: [
       `fiber optic splicing ${cityName}`,

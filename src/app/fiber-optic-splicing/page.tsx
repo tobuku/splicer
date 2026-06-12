@@ -6,7 +6,7 @@ import SchemaScript from '@/components/seo/SchemaScript'
 import RecommendedTools from '@/components/tools/RecommendedTools'
 
 export const metadata: Metadata = {
-  title: 'Fiber Optic Splicing Contractors | Fusion Splicing Services',
+  title: 'Fiber Optic Splicing Contractors, Fusion Splicing Services',
   description:
     'Find certified fiber optic splicing contractors near you. Fusion splicing, mechanical splicing, OTDR testing, and ribbon fiber. Get quotes from verified splice crews.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'ribbon fiber splicing',
   ],
   openGraph: {
-    title: 'Fiber Optic Splicing Contractors | SpliceList',
+    title: 'Fiber Optic Splicing Contractors, SpliceList',
     description:
       'Connect with certified fiber optic splicing crews for fusion splicing, OTDR testing, and emergency fiber repair.',
   },

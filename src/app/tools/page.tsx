@@ -5,7 +5,7 @@ import ToolsPageClient from '@/components/tools/ToolsPageClient'
 import SchemaScript from '@/components/seo/SchemaScript'
 
 export const metadata: Metadata = {
-  title: 'Cable Splicing Tools & Equipment | SpliceList',
+  title: 'Cable Splicing Tools & Equipment',
   description: 'Recommended tools and equipment for fiber optic and copper cable splicing professionals. Fusion splicers, OTDR units, fiber cleavers, and splice closures.',
   keywords: ['fusion splicer', 'OTDR', 'fiber cleaver', 'cable splicing tools', 'fiber optic equipment', 'copper splicing tools'],
 }

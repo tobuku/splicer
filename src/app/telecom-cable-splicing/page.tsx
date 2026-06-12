@@ -5,7 +5,7 @@ import ListingSearchWidget from '@/components/search/ListingSearchWidget'
 import SchemaScript from '@/components/seo/SchemaScript'
 
 export const metadata: Metadata = {
-  title: 'Telecom Cable Splicing Contractors | OSP Outside Plant Splicing',
+  title: 'Telecom Cable Splicing Contractors, OSP Outside Plant Splicing',
   description:
     'Find certified telecom cable splicing contractors for outside plant work, central office splicing, DSLAM connections, and buried cable repair. Verified OSP splice crews nationwide.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'buried telecom cable repair',
   ],
   openGraph: {
-    title: 'Telecom Cable Splicing Contractors | SpliceList',
+    title: 'Telecom Cable Splicing Contractors, SpliceList',
     description:
       'Connect with verified outside plant telecom splicing crews for OSP builds, central office work, DSLAM connections, and emergency cable repair.',
   },

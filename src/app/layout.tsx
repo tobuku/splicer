@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 export const metadata: Metadata = {
   metadataBase: new URL('https://splicelist.com'),
   title: {
-    default: 'SpliceList | Telecom & Fiber Optic Cable Splicing Contractors',
-    template: '%s | SpliceList',
+    default: 'SpliceList: Telecom & Fiber Optic Cable Splicing Contractors',
+    template: '%s, SpliceList',
   },
   description: 'Find certified telecom, fiber optic, and copper cable splicing contractors near you. Get quotes from verified splice crews for commercial and emergency jobs.',
   keywords: ['fiber optic splicing', 'cable splicing contractors', 'telecom splicing', 'copper cable splicing', 'fusion splicing services'],

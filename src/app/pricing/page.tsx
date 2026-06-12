@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Pricing | SpliceList — Cable Splicing Contractor Directory',
+  title: 'Pricing, Cable Splicing Contractor Directory',
   description: 'Simple, transparent pricing for cable splicing contractors. Get listed free or upgrade for featured placement, lead notifications, and enhanced profiles.',
 }
 
