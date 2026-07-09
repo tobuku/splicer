@@ -181,7 +181,7 @@ export async function GET(req: NextRequest) {
           where,
           skip: (page - 1) * limit,
           take: limit,
-          orderBy: [{ verified: 'desc' }, { rating: 'desc' }],
+          orderBy: [{ verified: 'desc' }, { rating: { sort: 'desc', nulls: 'last' } }, { reviewCount: 'desc' }],
         }),
         prisma.listing.count({ where }),
       ])

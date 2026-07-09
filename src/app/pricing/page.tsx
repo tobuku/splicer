@@ -24,52 +24,30 @@ const tiers = [
       'Receive customer reviews',
     ],
     notIncluded: [
-      'Featured placement in search',
+      'Featured badge and gold highlight',
+      'Priority placement in search',
       'Lead notification emails',
-      'Analytics dashboard',
-      'Priority support',
+      'Google rating and reviews displayed',
     ],
   },
   {
-    name: 'Pro',
-    price: '$49',
+    name: 'Featured',
+    price: '$29',
     period: 'per month',
+    annualPrice: '$199',
     description: 'Stand out from the competition with featured placement and a fully enhanced profile.',
     highlight: true,
-    cta: 'Get Started with Pro',
-    href: '/list-your-business?plan=pro',
+    cta: 'Get Featured',
+    href: '/list-your-business?plan=featured',
     features: [
       'Everything in Free',
-      'Featured badge on your listing',
-      'Priority placement in search results',
+      'Featured badge on your listing and search results',
+      'Gold highlighted card in search results',
+      'Priority placement above free listings',
+      'Google rating and reviews displayed',
       'Enhanced profile with photos and logo',
       'Lead notification emails',
-      'Direct inquiry form on your profile',
-      'Monthly performance summary',
       'Verified contractor badge',
-    ],
-    notIncluded: [
-      'Analytics dashboard',
-      'Dedicated account manager',
-    ],
-  },
-  {
-    name: 'Enterprise',
-    price: '$149',
-    period: 'per month',
-    description: 'Maximum visibility for high-volume contractors and multi-crew operations.',
-    highlight: false,
-    cta: 'Contact Sales',
-    href: 'mailto:hello@splicelist.com?subject=Enterprise%20Plan%20Inquiry',
-    features: [
-      'Everything in Pro',
-      'Top placement in category and city pages',
-      'Full analytics dashboard with lead tracking',
-      'Instant lead notifications via email and SMS',
-      'Multiple service area listings under one account',
-      'Dedicated account manager',
-      'Custom profile URL',
-      'Early access to new features',
     ],
     notIncluded: [],
   },
@@ -98,7 +76,7 @@ const faqs = [
   },
   {
     q: 'Do you offer discounts for annual billing?',
-    a: 'Annual billing discounts are coming soon. Email hello@splicelist.com to inquire about early access to annual pricing.',
+    a: 'Yes. The Featured plan is $29/month billed monthly, or $199/year billed annually — saving you $149 per year.',
   },
 ]
 
@@ -120,7 +98,7 @@ export default function PricingPage() {
 
       {/* Pricing cards */}
       <section className="pb-20 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {tiers.map((tier) => (
             <div
               key={tier.name}
@@ -145,6 +123,11 @@ export default function PricingPage() {
                   <span className="text-[#555555] text-sm mb-1">/{tier.period}</span>
                 </div>
                 <p className="text-[#555555] text-sm leading-relaxed">{tier.description}</p>
+                {'annualPrice' in tier && tier.annualPrice && (
+                  <p className="text-[#0b5cff] text-sm font-semibold mt-2">
+                    or {tier.annualPrice}/year — save $149
+                  </p>
+                )}
               </div>
 
               <Link
