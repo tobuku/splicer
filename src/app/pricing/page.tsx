@@ -37,8 +37,10 @@ const tiers = [
     annualPrice: '$199',
     description: 'Stand out from the competition with featured placement and a fully enhanced profile.',
     highlight: true,
-    cta: 'Get Featured',
-    href: '/list-your-business?plan=featured',
+    cta: 'Get Featured — $29/mo',
+    href: 'https://buy.stripe.com/3cI7sKeSEbbR3TG3VN04801',
+    annualCta: 'Get Featured — $199/yr (Save $149)',
+    annualHref: 'https://buy.stripe.com/5kQ9AS5i4bbReyk4ZR04802',
     features: [
       'Everything in Free',
       'Featured badge on your listing and search results',
@@ -130,16 +132,33 @@ export default function PricingPage() {
                 )}
               </div>
 
-              <Link
-                href={tier.href}
-                className={`block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-colors mb-8 ${
-                  tier.highlight
-                    ? 'bg-[#0b5cff] hover:bg-[#0946cc] text-white'
-                    : 'bg-[#eeeeee] hover:bg-gray-300 text-[#1f1f1f]'
-                }`}
-              >
-                {tier.cta}
-              </Link>
+              {tier.highlight && 'annualHref' in tier ? (
+                <div className="space-y-2.5 mb-8">
+                  <a
+                    href={tier.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-colors bg-[#0b5cff] hover:bg-[#0946cc] text-white"
+                  >
+                    {tier.cta}
+                  </a>
+                  <a
+                    href={(tier as any).annualHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-colors bg-emerald-600 hover:bg-emerald-700 text-white"
+                  >
+                    {(tier as any).annualCta}
+                  </a>
+                </div>
+              ) : (
+                <Link
+                  href={tier.href}
+                  className="block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-colors bg-[#eeeeee] hover:bg-gray-300 text-[#1f1f1f] mb-8"
+                >
+                  {tier.cta}
+                </Link>
+              )}
 
               <div className="flex-1">
                 <ul className="space-y-3">
