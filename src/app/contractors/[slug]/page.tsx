@@ -117,7 +117,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
       addressRegion: listing.state,
     },
     telephone: listing.phone,
-    url: listing.website,
+    url: listing.website ? (listing.website.startsWith('http') ? listing.website : `https://${listing.website}`) : undefined,
     ...(listing.rating ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: listing.rating, reviewCount: listing.reviewCount } } : {}),
   }
 
@@ -297,7 +297,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
                   </a>
                 )}
                 {listing.website && (
-                  <a href={listing.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#555555] hover:text-[#0b5cff] transition-colors text-sm">
+                  <a href={listing.website.startsWith('http') ? listing.website : `https://${listing.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#555555] hover:text-[#0b5cff] transition-colors text-sm">
                     <svg className="w-4 h-4 text-[#0b5cff] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
